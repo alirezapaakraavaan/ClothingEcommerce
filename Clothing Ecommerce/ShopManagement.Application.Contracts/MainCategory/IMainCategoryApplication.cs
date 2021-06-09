@@ -11,5 +11,6 @@ namespace ShopManagement.Application.Contracts.MainCategory
         OperationResult Restore(long id);
         EditMainCategory GetDetails(long id);
         List<MainCategoryViewModel> Search(MainCategorySearchModel searchModel);
+        List<MainCategoryViewModel> GetMainCategories();
     }
 }

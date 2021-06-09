@@ -16,6 +16,15 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
             _context = context;
         }
 
+        public List<MainCategoryViewModel> GetMainCategories()
+        {
+            return _context.MainCategories.Select(x => new MainCategoryViewModel
+            {
+                Id = x.Id,
+                Name = x.Name
+            }).ToList();
+        }
+
         public EditMainCategory GetDetails(long id)
         {
             return _context.MainCategories.Where(x => !x.IsRemoved).Select(x => new EditMainCategory

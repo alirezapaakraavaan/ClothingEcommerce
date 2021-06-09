@@ -78,5 +78,10 @@ namespace ShopManagement.Application
         {
             return _mainCategoryRepository.Search(searchModel);
         }
+
+        public List<MainCategoryViewModel> GetMainCategories()
+        {
+            return _mainCategoryRepository.GetMainCategories();
+        }
     }
 }

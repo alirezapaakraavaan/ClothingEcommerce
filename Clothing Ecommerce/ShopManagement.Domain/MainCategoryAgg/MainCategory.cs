@@ -1,4 +1,6 @@
-﻿using _0_Framework.Domain;
+﻿using System.Collections.Generic;
+using _0_Framework.Domain;
+using ShopManagement.Domain.ProductCategoryAgg;
 
 namespace ShopManagement.Domain.MainCategoryAgg
 {
@@ -12,6 +14,13 @@ namespace ShopManagement.Domain.MainCategoryAgg
         public string MetaDescription { get; private set; }
         public string Slug { get; private set; }
         public bool IsRemoved { get; private set; }
+        public List<ProductCategory> ProductCategories { get; private set; }
+
+
+        public MainCategory()
+        {
+            ProductCategories = new List<ProductCategory>();
+        }
 
         public MainCategory(string name, string picture, string pictureAlt, string pictureTitle, string keywords,
             string metaDescription, string slug)

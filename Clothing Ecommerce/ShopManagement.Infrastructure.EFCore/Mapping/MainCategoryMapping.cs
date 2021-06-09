@@ -1,11 +1,10 @@
-﻿using System.Numerics;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using ShopManagement.Domain.MainCategoryAgg;
 
 namespace ShopManagement.Infrastructure.EFCore.Mapping
 {
-    public class MainCategoryMapping: IEntityTypeConfiguration<MainCategory>
+    public class MainCategoryMapping : IEntityTypeConfiguration<MainCategory>
     {
         public void Configure(EntityTypeBuilder<MainCategory> builder)
         {
@@ -17,6 +16,9 @@ namespace ShopManagement.Infrastructure.EFCore.Mapping
             builder.Property(x => x.Keywords).HasMaxLength(80);
             builder.Property(x => x.MetaDescription).HasMaxLength(150);
             builder.Property(x => x.Slug).HasMaxLength(300).IsRequired();
+
+            builder.HasMany(x => x.ProductCategories)
+                .WithOne(x => x.MainCategory).HasForeignKey(x => x.MainCategoryId);
         }
     }
 }
