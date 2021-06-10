@@ -3,6 +3,7 @@ using System.Linq;
 using _0_Framework.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using ShopManagement.Application.Contracts.Product;
+using ShopManagement.Application.Contracts.ProductSize;
 using ShopManagement.Domain.ProductAgg;
 
 namespace ShopManagement.Infrastructure.EFCore.Repository
@@ -77,6 +78,15 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
             {
                 Id = x.Id,
                 Name = x.Name
+            }).ToList();
+        }
+
+        public List<ProductSizeViewModel> GetProductSizes()
+        {
+            return _context.ProductSizes.Select(x => new ProductSizeViewModel
+            {
+                Id = x.Id,
+                Size = x.Size
             }).ToList();
         }
     }

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using _0_Framework.Application;
 using ShopManagement.Application.Contracts.Product;
+using ShopManagement.Application.Contracts.ProductSize;
 using ShopManagement.Domain.ProductAgg;
 
 namespace ShopManagement.Application
@@ -112,6 +113,11 @@ namespace ShopManagement.Application
         public List<ProductViewModel> GetProducts()
         {
             return _productRepository.GetProducts();
+        }
+
+        public List<ProductSizeViewModel> GetProductSizes()
+        {
+            return _productRepository.GetProductSizes();
         }
     }
 }

@@ -173,3 +173,15 @@ D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debu
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\ProductPictures\Create.cshtml.g.cs
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\ProductPictures\Edit.cshtml.g.cs
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\ProductPictures\Index.cshtml.g.cs
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\ProductSizes\Create.cshtml.g.cs
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\ProductSizes\Edit.cshtml.g.cs
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\ProductSizes\Index.cshtml.g.cs
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\ProductColors\Create.cshtml.g.cs
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\ProductColors\Edit.cshtml.g.cs
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\ProductColors\Index.cshtml.g.cs
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\ProductPrices\Create.cshtml.g.cs
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\ProductPrices\Edit.cshtml.g.cs
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\ProductPrices\Index.cshtml.g.cs
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\Slides\Create.cshtml.g.cs
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\Slides\Edit.cshtml.g.cs
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\Slides\Index.cshtml.g.cs

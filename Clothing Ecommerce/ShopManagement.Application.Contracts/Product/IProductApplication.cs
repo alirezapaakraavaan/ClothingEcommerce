@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using _0_Framework.Application;
+using ShopManagement.Application.Contracts.ProductSize;
 
 namespace ShopManagement.Application.Contracts.Product
 {
@@ -14,5 +15,6 @@ namespace ShopManagement.Application.Contracts.Product
         EditProduct GetDetails(long id);
         List<ProductViewModel> Search(ProductSearchModel searchModel);
         List<ProductViewModel> GetProducts();
+        List<ProductSizeViewModel> GetProductSizes();
     }
 }

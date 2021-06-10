@@ -202,6 +202,36 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                     b.ToTable("ProductCategories");
                 });
 
+            modelBuilder.Entity("ShopManagement.Domain.ProductColorAgg.ProductColor", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Color")
+                        .IsRequired()
+                        .HasMaxLength(60)
+                        .HasColumnType("nvarchar(60)");
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("ProductId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("ProductSizeId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("ProductSizeId");
+
+                    b.ToTable("ProductColors");
+                });
+
             modelBuilder.Entity("ShopManagement.Domain.ProductPictureAgg.ProductPicture", b =>
                 {
                     b.Property<long>("Id")
@@ -238,6 +268,106 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                     b.ToTable("ProductPictures");
                 });
 
+            modelBuilder.Entity("ShopManagement.Domain.ProductPriceAgg.ProductPrice", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.Property<long>("ProductId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("ProductSizeId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("ProductSizeId");
+
+                    b.ToTable("ProductPrices");
+                });
+
+            modelBuilder.Entity("ShopManagement.Domain.ProductSizeAgg.ProductSize", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("ProductId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Size")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductSizes");
+                });
+
+            modelBuilder.Entity("ShopManagement.Domain.SlideAgg.Slide", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("BtnText")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Hashtag")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<bool>("IsRemoved")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Picture")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<string>("PictureAlt")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("PictureTitle")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Title")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Slides");
+                });
+
             modelBuilder.Entity("ShopManagement.Domain.ProductAgg.Product", b =>
                 {
                     b.HasOne("ShopManagement.Domain.ProductCategoryAgg.ProductCategory", "ProductCategory")
@@ -260,10 +390,59 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
                     b.Navigation("MainCategory");
                 });
 
+            modelBuilder.Entity("ShopManagement.Domain.ProductColorAgg.ProductColor", b =>
+                {
+                    b.HasOne("ShopManagement.Domain.ProductAgg.Product", "Product")
+                        .WithMany("ProductColors")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ShopManagement.Domain.ProductSizeAgg.ProductSize", "ProductSize")
+                        .WithMany("ProductColors")
+                        .HasForeignKey("ProductSizeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("ProductSize");
+                });
+
             modelBuilder.Entity("ShopManagement.Domain.ProductPictureAgg.ProductPicture", b =>
                 {
                     b.HasOne("ShopManagement.Domain.ProductAgg.Product", "Product")
                         .WithMany("ProductPictures")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("ShopManagement.Domain.ProductPriceAgg.ProductPrice", b =>
+                {
+                    b.HasOne("ShopManagement.Domain.ProductAgg.Product", "Product")
+                        .WithMany("ProductPrices")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ShopManagement.Domain.ProductSizeAgg.ProductSize", "ProductSize")
+                        .WithMany("ProductPrices")
+                        .HasForeignKey("ProductSizeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("ProductSize");
+                });
+
+            modelBuilder.Entity("ShopManagement.Domain.ProductSizeAgg.ProductSize", b =>
+                {
+                    b.HasOne("ShopManagement.Domain.ProductAgg.Product", "Product")
+                        .WithMany("ProductSizes")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -278,12 +457,25 @@ namespace ShopManagement.Infrastructure.EFCore.Migrations
 
             modelBuilder.Entity("ShopManagement.Domain.ProductAgg.Product", b =>
                 {
+                    b.Navigation("ProductColors");
+
                     b.Navigation("ProductPictures");
+
+                    b.Navigation("ProductPrices");
+
+                    b.Navigation("ProductSizes");
                 });
 
             modelBuilder.Entity("ShopManagement.Domain.ProductCategoryAgg.ProductCategory", b =>
                 {
                     b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("ShopManagement.Domain.ProductSizeAgg.ProductSize", b =>
+                {
+                    b.Navigation("ProductColors");
+
+                    b.Navigation("ProductPrices");
                 });
 #pragma warning restore 612, 618
         }

@@ -6,6 +6,9 @@
 
   <ItemGroup>
     <Folder Include="MainCategory\" />
+    <Folder Include="Slide\" />
+    <Folder Include="ProductPrice\" />
+    <Folder Include="ProductColor\" />
     <Folder Include="ProductCategory\" />
   </ItemGroup>
 

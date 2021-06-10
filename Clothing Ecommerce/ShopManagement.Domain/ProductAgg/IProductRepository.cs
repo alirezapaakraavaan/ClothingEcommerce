@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using _0_Framework.Domain;
 using ShopManagement.Application.Contracts.Product;
+using ShopManagement.Application.Contracts.ProductSize;
 
 namespace ShopManagement.Domain.ProductAgg
 {
@@ -9,5 +10,6 @@ namespace ShopManagement.Domain.ProductAgg
         EditProduct GetDetails(long id);
         List<ProductViewModel> Search(ProductSearchModel searchModel);
         List<ProductViewModel> GetProducts();
+        List<ProductSizeViewModel> GetProductSizes();
     }
 }

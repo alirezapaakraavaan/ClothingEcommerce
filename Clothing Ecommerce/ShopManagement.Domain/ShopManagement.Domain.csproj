@@ -10,6 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="SlideAgg\" />
+    <Folder Include="ProductPriceAgg\" />
     <Folder Include="ProductCategoryAgg\" />
   </ItemGroup>
 
