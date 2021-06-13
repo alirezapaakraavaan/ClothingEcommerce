@@ -21,3 +21,5 @@ D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infra
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\obj\Debug\net5.0\ShopManagement.Configuration.dll
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\obj\Debug\net5.0\ref\ShopManagement.Configuration.dll
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\obj\Debug\net5.0\ShopManagement.Configuration.pdb
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\01_EcommerceQuery.dll
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\01_EcommerceQuery.pdb

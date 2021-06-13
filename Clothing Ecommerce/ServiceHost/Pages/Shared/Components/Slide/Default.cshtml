@@ -1,0 +1,69 @@
+﻿@model List<_01_EcommerceQuery.Contract.Slide.SlideQueryModel>
+
+<div class="slider-area mb-80 mb-sm-60">
+    <div id="rev_slider_15_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="homapage-15"
+         data-source="gallery"
+         style="margin:0px auto;background:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
+        <div id="rev_slider_15_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.4.7">
+            <ul>
+                @foreach (var slide in Model)
+                {
+                    <li data-index="rs-41"
+                        data-transition="slideremoveright,slideremoveleft,slideremoveup,slideremovedown,slideremovehorizontal,slideremovevertical"
+                        data-slotamount="default,default,default,default,default,default" data-hideafterloop="0"
+                        data-hideslideonmobile="off" data-easein="default,default,default,default,default,default"
+                        data-easeout="default,default,default,default,default,default"
+                        data-masterspeed="default,default,default,default,default,default" data-thumb="" data-rotate="0,0,0,0,0,0"
+                        data-saveperformance="off" data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4=""
+                        data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10=""
+                        data-description="">
+                        <!-- MAIN IMAGE -->
+                        <img src="@slide.Picture" data-bgcolor='#dfd2c0' style='background: #dfd2c0' alt="@slide.PictureAlt" title="@slide.PictureTitle"
+                             data-lazyload="assets/images/revimages/transparent.png" data-bgposition="center center" data-bgfit="cover"
+                             data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+
+                        <!-- LAYER NR. 21 -->
+                        <div class="tp-caption tp-resizeme" id="slide-41-layer-13" data-x="['center','center','center','center']"
+                             data-hoffset="['-349','-377','0','0']" data-y="['top','top','top','top']"
+                             data-voffset="['277','253','73','76']"
+                             data-color="['rgb(51,51,51)','rgb(105,105,105)','rgb(105,105,105)','rgb(105,105,105)']" data-width="none"
+                             data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on"
+                             data-frames='[{"delay":700,"speed":1500,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                             data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
+                             data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                             style="z-index: 9; white-space: nowrap; font-size: 40px; line-height: 36px; font-weight: 600; color: #333333; letter-spacing: 3px; font-family: Work Sans;">
+                            @slide.Hashtag
+                        </div>
+
+                        <!-- LAYER NR. 22 -->
+                        <div class="tp-caption   tp-resizeme" id="slide-41-layer-3" data-x="['center','center','center','center']"
+                             data-hoffset="['-349','-219','0','0']" data-y="['middle','middle','middle','top']"
+                             data-voffset="['-28','25','-279','133']" data-fontsize="['56','56','56','35']"
+                             data-lineheight="['72','72','72','45']" data-width="none" data-height="none" data-whitespace="nowrap"
+                             data-type="text" data-responsive_offset="on"
+                             data-frames='[{"delay":1260,"speed":2000,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                             data-textAlign="['center','inherit','center','center']" data-paddingtop="[0,0,0,0]"
+                             data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                             style="z-index: 10; white-space: nowrap; font-size: 56px; line-height: 72px; font-weight: 600; color: #333333; letter-spacing: 0px; font-family: Work Sans;">
+                            @slide.Title
+                        </div>
+
+                        <!-- LAYER NR. 23 -->
+                        <div class="tp-caption Slider-button-alt rev-btn  tp-resizeme" id="slide-41-layer-20"
+                             data-x="['center','center','center','center']" data-hoffset="['-362','-375','0','0']"
+                             data-y="['top','top','top','top']" data-voffset="['554','530','305','248']" data-width="none"
+                             data-height="none" data-whitespace="nowrap" data-type="button"
+                             data-responsive_offset="on"
+                             data-frames='[{"delay":1610,"speed":2000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"300","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgb(51,51,51);bg:transparent;"}]'
+                             data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[12,12,12,12]"
+                             data-paddingright="[35,35,35,35]" data-paddingbottom="[12,12,12,12]" data-paddingleft="[35,35,35,35]"
+                             style="z-index: 11; white-space: nowrap; letter-spacing: 1px; border-color: rgba(0, 0, 0, 1); outline: none; box-shadow: none; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; cursor: pointer;">
+                            <a class="revslider-button" href="@slide.Link"> @slide.BtnText</a>
+                        </div>
+                    </li>
+                }
+            </ul>
+            <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
+        </div>
+    </div>
+</div>

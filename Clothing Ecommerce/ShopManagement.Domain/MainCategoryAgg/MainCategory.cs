@@ -16,7 +16,6 @@ namespace ShopManagement.Domain.MainCategoryAgg
         public bool IsRemoved { get; private set; }
         public List<ProductCategory> ProductCategories { get; private set; }
 
-
         public MainCategory()
         {
             ProductCategories = new List<ProductCategory>();

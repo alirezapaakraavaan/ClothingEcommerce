@@ -1,0 +1,44 @@
+﻿@model List<_01_EcommerceQuery.Contract.Products.ProductQueryModel>
+<div class="banner-with-product-area mb-30 mb-sm-10">
+    <div class="container wide">
+        <div class="row">
+            <div class="col-lg-8 order-2">
+                <div class="row">
+                    @foreach (var product in Model)
+                    {
+                        <div class="col-12 col-lg-4 col-md-6 col-sm-6 mb-45">
+                            <div class="single-product">
+                                <div class="single-product__image">
+                                    <a class="image-wrap" href="shop-product-basic.html">
+                                        <img src="@product.Picture" class="img-fluid" alt="@product.PictureAlt" title="@product.PictureTitle" style="height: 300px">
+                                    </a>
+                                    <div class="single-product__floating-badges">
+                                    </div>
+                                </div>
+                                <div class="single-product__content">
+                                    <div class="title">
+                                        <h3> <a href="shop-product-basic.html">@product.Name</a></h3>
+                                        <a href="#">اضافه به سبد خرید</a>
+                                    </div>
+                                    <div class="price">
+                                        <span class="main-price discounted">@product.Price</span>
+                                        <span class="discounted-price">$100.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="col-lg-4 order-1 mb-md-50 mb-sm-50">
+                <div class="product-side-banner">
+                    <a href="shop-left-sidebar.html" class="mb-40">
+                        <img src="~/Theme/assets/images/banners/Kids.jpg" class="img-fluid" alt="">
+                    </a>
+                    <a href="shop-left-sidebar.html" class="product-side-banner--link">#بچه گانه</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
