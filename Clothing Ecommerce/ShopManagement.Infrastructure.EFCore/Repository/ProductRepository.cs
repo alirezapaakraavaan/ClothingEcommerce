@@ -34,7 +34,6 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 PictureTitle = x.PictureTitle,
                 ShortDescription = x.ShortDescription,
                 Size = x.Size,
-                UnitPrice = x.UnitPrice,
                 ProductCategoryId = x.ProductCategoryId
             }).FirstOrDefault(x => x.Id == id);
         }
@@ -45,7 +44,6 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 .Where(x => !x.IsRemoved).Select(x => new ProductViewModel
                 {
                     Size = x.Size,
-                    UnitPrice = x.UnitPrice,
                     ProductCategoryId = x.ProductCategoryId,
                     Code = x.Code,
                     Color = x.Color,
@@ -53,8 +51,7 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                     Name = x.Name,
                     Picture = x.Picture,
                     ProductCategoryName = x.ProductCategory.Name,
-                    IsRemoved = x.IsRemoved,
-                    IsInStock = x.IsInStock
+                    IsRemoved = x.IsRemoved
                 });
 
             if (!string.IsNullOrWhiteSpace(searchModel.Name))

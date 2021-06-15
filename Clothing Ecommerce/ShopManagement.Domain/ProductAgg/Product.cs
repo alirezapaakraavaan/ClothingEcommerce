@@ -12,7 +12,6 @@ namespace ShopManagement.Domain.ProductAgg
     {
         public string Name { get; private set; }
         public string Code { get; private set; }
-        public double UnitPrice { get; private set; }
         public string ShortDescription { get; private set; }
         public string Description { get; private set; }
         public string Picture { get; private set; }
@@ -22,7 +21,6 @@ namespace ShopManagement.Domain.ProductAgg
         public string Keywords { get; private set; }
         public string MetaDescription { get; private set; }
         public bool IsRemoved { get; private set; }
-        public bool IsInStock { get; private set; }
         public string Color { get; private set; }
         public string Size { get; private set; }
         public long ProductCategoryId { get; private set; }
@@ -32,13 +30,12 @@ namespace ShopManagement.Domain.ProductAgg
         public List<ProductColor> ProductColors { get; private set; }
         public List<ProductPrice> ProductPrices { get; private set; }
 
-        public Product(string name, string code, double unitPrice, string shortDescription, string description,
+        public Product(string name, string code, string shortDescription, string description,
             string picture, string pictureAlt, string pictureTitle, string slug, string keywords,
             string metaDescription, string color, string size, long productCategoryId)
         {
             Name = name;
             Code = code;
-            UnitPrice = unitPrice;
             ShortDescription = shortDescription;
             Description = description;
             Picture = picture;
@@ -51,16 +48,14 @@ namespace ShopManagement.Domain.ProductAgg
             Size = size;
             ProductCategoryId = productCategoryId;
             IsRemoved = false;
-            IsInStock = true;
         }
 
-        public void Edit(string name, string code, double unitPrice, string shortDescription, string description,
+        public void Edit(string name, string code, string shortDescription, string description,
             string picture, string pictureAlt, string pictureTitle, string slug, string keywords,
             string metaDescription, string color, string size, long productCategoryId)
         {
             Name = name;
             Code = code;
-            UnitPrice = unitPrice;
             ShortDescription = shortDescription;
             Description = description;
             Picture = picture;
@@ -82,16 +77,6 @@ namespace ShopManagement.Domain.ProductAgg
         public void Restore()
         {
             IsRemoved = false;
-        }
-
-        public void InStock()
-        {
-            IsInStock = true;
-        }
-
-        public void NotInStock()
-        {
-            IsInStock = false;
         }
     }
 }

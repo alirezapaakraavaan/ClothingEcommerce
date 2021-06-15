@@ -63,23 +63,5 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Products
             var product = _productApplication.Remove(id);
             return RedirectToPage("./Index");
         }
-
-        public IActionResult OnGetNotInStock(long id)
-        {
-            var product = _productApplication.NotInStock(id);
-            if (product.IsSucceeded)
-                return RedirectToPage("./Index");
-            Message = product.Message;
-            return RedirectToPage("./Index");
-        }
-
-        public IActionResult OnGetIsInStock(long id)
-        {
-            var product = _productApplication.InStock(id);
-            if (product.IsSucceeded)
-                return RedirectToPage("./Index");
-            Message = product.Message;
-            return RedirectToPage("./Index");
-        }
     }
 }

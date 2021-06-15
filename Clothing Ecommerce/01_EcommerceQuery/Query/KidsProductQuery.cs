@@ -18,17 +18,15 @@ namespace _01_EcommerceQuery.Query
         public List<ProductQueryModel> GetProductsForKids()
         {
             return _context.Products.Include(x => x.ProductCategory)
-                .Where(x => x.IsInStock && !x.IsRemoved && x.ProductCategoryId == 8)
+                .Where(x =>!x.IsRemoved && x.ProductCategoryId == 8)
                 .Select(x => new ProductQueryModel
                 {
                     IsRemoved = x.IsRemoved,
                     Picture = x.Picture,
-                    IsInStock = x.IsInStock,
                     Name = x.Name,
                     PictureAlt = x.PictureAlt,
                     PictureTitle = x.PictureTitle,
-                    Slug = x.Slug,
-                    Price = x.UnitPrice
+                    Slug = x.Slug
                 }).ToList();
         }
     }
