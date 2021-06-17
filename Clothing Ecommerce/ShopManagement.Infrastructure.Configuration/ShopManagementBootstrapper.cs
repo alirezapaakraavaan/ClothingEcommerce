@@ -1,4 +1,5 @@
-﻿using _01_EcommerceQuery.Contract.Products;
+﻿using _01_EcommerceQuery.Contract.ProductCategories;
+using _01_EcommerceQuery.Contract.Products;
 using _01_EcommerceQuery.Contract.Slide;
 using _01_EcommerceQuery.Query;
 using Microsoft.EntityFrameworkCore;
@@ -45,6 +46,12 @@ namespace ShopManagement.Configuration
             services.AddTransient<IProductQueryMen, MenProductQuery>();
 
             services.AddTransient<IProductQueryKids, KidsProductQuery>();
+
+            services.AddTransient<IProductCategoryQueryWemen, WemenProductCategoryQuery>();
+
+            services.AddTransient<IProductCategoryQueryMen, MenProductCategoryQuery>();
+
+            services.AddTransient<IProductCategoryQueryKids, KidsProductCategoryQuery>();
 
             services.AddDbContext<ShopContext>(x => x.UseSqlServer(connectionString));
         }

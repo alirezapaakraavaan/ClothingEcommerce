@@ -7,45 +7,46 @@
                     @foreach (var product in Model)
                     {
                         <div class="col-12 col-lg-4 col-md-6 col-sm-6 mb-45">
-                        <div class="single-product">
-                            <div class="single-product__image">
-                                <a class="image-wrap" href="shop-product-basic.html">
-                                    <img src="@product.Picture" class="img-fluid" alt="@product.PictureAlt" title="@product.PictureTitle" style="height: 300px">
-                                </a>
-                                <div class="single-product__floating-badges">
+                            <div class="single-product">
+                                <div class="single-product__image">
+                                    <a class="image-wrap" href="shop-product-basic.html">
+                                        <img src="@product.Picture" class="img-fluid" alt="@product.PictureAlt" title="@product.PictureTitle" style="height: 300px">
+                                    </a>
+                                    <div class="single-product__floating-badges">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="single-product__content">
-                                <div class="title">
-                                    <h3> <a href="shop-product-basic.html">@product.Name</a></h3>
-                                    <a href="#">اضافه به سبد خرید</a>
-                                </div>
-                                <div class="price">
-                                    @if (product.HasDiscount)
-                                    {
-                                        <span class="main-price discounted">@product.Price نومان</span><br/>
-                                        <span class="discounted-price" style="color: red">@product.PriceWithDiscount تومان</span>
-                                    }
-                                    else
-                                    {
-                                        <span class="main-price">@product.Price نومان</span>
-                                    }
+                                <div class="single-product__content">
+                                    <div class="title">
+                                        <h3> <a href="shop-product-basic.html">@product.Name</a></h3>
+                                        <a href="#">اضافه به سبد خرید</a>
+                                    </div>
+                                    <div class="price">
+                                        @if (product.HasDiscount)
+                                        {
+                                            <span class="main-price discounted">@product.Price نومان</span><br />
+                                            <span class="discounted-price" style="color: red">@product.PriceWithDiscount تومان</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="main-price">@product.Price نومان</span>
+                                        }
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     }
                 </div>
             </div>
 
             <div class="col-lg-4 order-1 mb-md-50 mb-sm-50">
                 <div class="product-side-banner">
-                    <a href="shop-left-sidebar.html" class="mb-40">
+                    <a asp-page="WemenProductCategory" class="mb-40">
                         <img src="~/Theme/assets/images/banners/women.png" class="img-fluid" alt="">
                     </a>
-                    <a href="shop-left-sidebar.html" class="product-side-banner--link">#زنانه</a>
+                    <a asp-page="WemenProductCategory" class="product-side-banner--link">#زنانه</a>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
