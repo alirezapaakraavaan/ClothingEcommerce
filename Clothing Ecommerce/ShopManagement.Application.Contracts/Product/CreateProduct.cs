@@ -28,9 +28,6 @@ namespace ShopManagement.Application.Contracts.Product
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         public string MetaDescription { get; set; }
 
-        public string Color { get; set; }
-        public string Size { get; set; }
-
         [Range(1, 100000, ErrorMessage = ValidationMessages.IsRequired)]
         public long ProductCategoryId { get; set; }
 

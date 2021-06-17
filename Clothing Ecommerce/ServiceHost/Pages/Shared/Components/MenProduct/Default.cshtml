@@ -12,19 +12,27 @@
                                     <a class="image-wrap" href="shop-product-basic.html">
                                         <img src="@product.Picture" class="img-fluid" alt="@product.PictureAlt" title="@product.PictureTitle" style="height: 300px">
                                     </a>
-
                                     <div class="single-product__floating-badges">
                                     </div>
                                 </div>
-
                                 <div class="single-product__content">
                                     <div class="title">
-                                        <h3> <a href="shop-product-basic.html">@product.Name</a></h3>
-                                        <a href="#">Add to cart</a>
+                                        <h3>
+                                            <a href="shop-product-basic.html">@product.Name</a>
+                                        </h3>
+                                        <a href="#">اضافه به سبد خرید</a>
                                     </div>
                                     <div class="price">
-                                        <span class="main-price discounted">@product.Price</span>
-                                        <span class="discounted-price">$100.00</span>
+                                        @if (product.HasDiscount)
+                                        {
+                                            <span class="main-price discounted">@product.Price تومان</span><br />
+                                            <span class="discounted-price" style="color: red">@product.PriceWithDiscount تومان</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="main-price">@product.Price تومان</span>
+                                        }
+
                                     </div>
                                 </div>
                             </div>

@@ -1,10 +1,7 @@
 ﻿using System.Collections.Generic;
 using _0_Framework.Domain;
 using ShopManagement.Domain.ProductCategoryAgg;
-using ShopManagement.Domain.ProductColorAgg;
 using ShopManagement.Domain.ProductPictureAgg;
-using ShopManagement.Domain.ProductPriceAgg;
-using ShopManagement.Domain.ProductSizeAgg;
 
 namespace ShopManagement.Domain.ProductAgg
 {
@@ -21,18 +18,13 @@ namespace ShopManagement.Domain.ProductAgg
         public string Keywords { get; private set; }
         public string MetaDescription { get; private set; }
         public bool IsRemoved { get; private set; }
-        public string Color { get; private set; }
-        public string Size { get; private set; }
         public long ProductCategoryId { get; private set; }
         public ProductCategory ProductCategory { get; private set; }
         public List<ProductPicture> ProductPictures { get; private set; }
-        public List<ProductSize> ProductSizes { get; private set; }
-        public List<ProductColor> ProductColors { get; private set; }
-        public List<ProductPrice> ProductPrices { get; private set; }
 
         public Product(string name, string code, string shortDescription, string description,
             string picture, string pictureAlt, string pictureTitle, string slug, string keywords,
-            string metaDescription, string color, string size, long productCategoryId)
+            string metaDescription, long productCategoryId)
         {
             Name = name;
             Code = code;
@@ -44,15 +36,13 @@ namespace ShopManagement.Domain.ProductAgg
             Slug = slug;
             Keywords = keywords;
             MetaDescription = metaDescription;
-            Color = color;
-            Size = size;
             ProductCategoryId = productCategoryId;
             IsRemoved = false;
         }
 
         public void Edit(string name, string code, string shortDescription, string description,
             string picture, string pictureAlt, string pictureTitle, string slug, string keywords,
-            string metaDescription, string color, string size, long productCategoryId)
+            string metaDescription, long productCategoryId)
         {
             Name = name;
             Code = code;
@@ -64,8 +54,6 @@ namespace ShopManagement.Domain.ProductAgg
             Slug = slug;
             Keywords = keywords;
             MetaDescription = metaDescription;
-            Color = color;
-            Size = size;
             ProductCategoryId = productCategoryId;
         }
 

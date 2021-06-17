@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using _0_Framework.Application;
 using ShopManagement.Application.Contracts.Product;
-using ShopManagement.Application.Contracts.ProductSize;
 using ShopManagement.Domain.ProductAgg;
 
 namespace ShopManagement.Application
@@ -22,7 +21,7 @@ namespace ShopManagement.Application
             var slug = command.Slug.Slugify();
             var product = new Product(command.Name, command.Code, command.ShortDescription,
                 command.Description, command.Picture, command.PictureAlt, command.PictureTitle, slug,
-                command.Keywords, command.MetaDescription, command.Color, command.Size, command.ProductCategoryId);
+                command.Keywords, command.MetaDescription, command.ProductCategoryId);
 
             _productRepository.Create(product);
             _productRepository.SaveChanges();
@@ -42,7 +41,7 @@ namespace ShopManagement.Application
             var slug = command.Slug.Slugify();
             product.Edit(command.Name, command.Code, command.ShortDescription,
                 command.Description, command.Picture, command.PictureAlt, command.PictureTitle, slug,
-                command.Keywords, command.MetaDescription, command.Color, command.Size, command.ProductCategoryId);
+                command.Keywords, command.MetaDescription,command.ProductCategoryId);
 
             _productRepository.SaveChanges();
             return operation.Succeeded();
@@ -87,11 +86,6 @@ namespace ShopManagement.Application
         public List<ProductViewModel> GetProducts()
         {
             return _productRepository.GetProducts();
-        }
-
-        public List<ProductSizeViewModel> GetProductSizes()
-        {
-            return _productRepository.GetProductSizes();
         }
     }
 }

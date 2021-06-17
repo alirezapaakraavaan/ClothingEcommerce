@@ -21,8 +21,15 @@
                                     <a href="#">اضافه به سبد خرید</a>
                                 </div>
                                 <div class="price">
-                                    <span class="main-price discounted">@product.Price</span>
-                                    <span class="discounted-price">$100.00</span>
+                                    @if (product.HasDiscount)
+                                    {
+                                        <span class="main-price discounted">@product.Price نومان</span><br/>
+                                        <span class="discounted-price" style="color: red">@product.PriceWithDiscount تومان</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="main-price">@product.Price نومان</span>
+                                    }
                                 </div>
                             </div>
                         </div>

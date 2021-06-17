@@ -15,8 +15,6 @@ namespace ShopManagement.Infrastructure.EFCore.Mapping
             builder.Property(x => x.ShortDescription).HasMaxLength(250);
             builder.Property(x => x.Description).HasMaxLength(1500);
             builder.Property(x => x.Picture).HasMaxLength(1000);
-            builder.Property(x => x.Color).HasMaxLength(30);
-            builder.Property(x => x.Size).HasMaxLength(10);
             builder.Property(x => x.Slug).HasMaxLength(500).IsRequired();
             builder.Property(x => x.Keywords).HasMaxLength(100).IsRequired();
             builder.Property(x => x.MetaDescription).HasMaxLength(150).IsRequired();
@@ -25,15 +23,6 @@ namespace ShopManagement.Infrastructure.EFCore.Mapping
                 .HasForeignKey(x => x.ProductCategoryId);
 
             builder.HasMany(x => x.ProductPictures).WithOne(x => x.Product)
-                .HasForeignKey(x => x.ProductId);
-
-            builder.HasMany(x => x.ProductSizes).WithOne(x => x.Product)
-                .HasForeignKey(x => x.ProductId);
-
-            builder.HasMany(x => x.ProductColors).WithOne(x => x.Product)
-                .HasForeignKey(x => x.ProductId);
-
-            builder.HasMany(x => x.ProductPrices).WithOne(x => x.Product)
                 .HasForeignKey(x => x.ProductId);
         }
     }

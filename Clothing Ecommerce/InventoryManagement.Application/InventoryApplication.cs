@@ -17,6 +17,7 @@ namespace InventoryManagement.Application
         public OperationResult Create(CreateInventory command)
         {
             var operation = new OperationResult();
+
             if (_inventoryRepository.Exists(x => x.ProductId == command.ProductId))
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
 

@@ -3,7 +3,6 @@ using System.Linq;
 using _0_Framework.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using ShopManagement.Application.Contracts.Product;
-using ShopManagement.Application.Contracts.ProductSize;
 using ShopManagement.Domain.ProductAgg;
 
 namespace ShopManagement.Infrastructure.EFCore.Repository
@@ -23,7 +22,6 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
             {
                 Id = x.Id,
                 Code = x.Code,
-                Color = x.Color,
                 Description = x.Description,
                 Keywords = x.Keywords,
                 MetaDescription = x.MetaDescription,
@@ -33,7 +31,6 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 PictureAlt = x.PictureAlt,
                 PictureTitle = x.PictureTitle,
                 ShortDescription = x.ShortDescription,
-                Size = x.Size,
                 ProductCategoryId = x.ProductCategoryId
             }).FirstOrDefault(x => x.Id == id);
         }
@@ -43,10 +40,8 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
             var query = _context.Products.Include(x => x.ProductCategory)
                 .Where(x => !x.IsRemoved).Select(x => new ProductViewModel
                 {
-                    Size = x.Size,
                     ProductCategoryId = x.ProductCategoryId,
                     Code = x.Code,
-                    Color = x.Color,
                     Id = x.Id,
                     Name = x.Name,
                     Picture = x.Picture,
@@ -75,15 +70,6 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
             {
                 Id = x.Id,
                 Name = x.Name
-            }).ToList();
-        }
-
-        public List<ProductSizeViewModel> GetProductSizes()
-        {
-            return _context.ProductSizes.Select(x => new ProductSizeViewModel
-            {
-                Id = x.Id,
-                Size = x.Size
             }).ToList();
         }
     }

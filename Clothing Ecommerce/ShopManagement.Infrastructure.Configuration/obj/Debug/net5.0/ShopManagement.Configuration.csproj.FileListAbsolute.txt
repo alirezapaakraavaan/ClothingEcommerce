@@ -23,3 +23,15 @@ D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infra
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\obj\Debug\net5.0\ShopManagement.Configuration.pdb
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\01_EcommerceQuery.dll
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\01_EcommerceQuery.pdb
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\InventoryManagement.Application.Contracts.dll
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\InventoryManagement.Domain.dll
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\InventoryManagement.Infrastructure.EFCore.dll
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\InventoryManagement.Application.Contracts.pdb
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\InventoryManagement.Domain.pdb
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\InventoryManagement.Infrastructure.EFCore.pdb
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\DiscountManagement.Application.Contracts.dll
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\DiscountManagement.Domain.dll
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.dll
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\DiscountManagement.Application.Contracts.pdb
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\DiscountManagement.Domain.pdb
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\DiscountManagement.Infrastructure.EFCore.pdb
