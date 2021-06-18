@@ -1,0 +1,98 @@
+﻿@page
+@model ServiceHost.Pages.WemenProductsTrouserModel
+@{
+    ViewData["Title"] = "شلوار زنانه";
+}
+
+<div class="breadcrumb-area breadcrumb-bg-2 pt-50 pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="breadcrumb-title">فروشگاه</h1>
+                <ul class="breadcrumb-list">
+                    <li class="breadcrumb-list__item">
+                        <a asp-page="./Index">خانه</a>
+                    </li>
+                    <li class="breadcrumb-list__item">
+                        <a asp-page="./WemenProductCategory">گروه محصولات</a>
+                    </li>
+                    <li class="breadcrumb-list__item breadcrumb-list__item--active">شلوار زنانه</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="shop-page-header">
+    <div class="container wide">
+        <div class="row align-items-center">
+            <div class="col-12 col-lg-7 col-md-10 d-none d-md-block">
+                <div class="filter-title filter-title--type-two">
+                    <ul class="product-filter-menu">
+                        <li class="active" data-filter="*">همه</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-lg-5 col-md-2">
+                <div class="filter-icons">
+                    <div class="single-icon grid-icons">
+                        <a data-target="five-column" class="active" href="javascript:void(0)">
+                            <i class="ti-layout-grid4-alt"></i>
+                        </a>
+                        <a data-target="four-column" href="javascript:void(0)">
+                            <i class="ti-layout-grid3-alt"></i>
+                        </a>
+                        <a data-target="three-column" href="javascript:void(0)">
+                            <i class="ti-layout-grid2-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="shop-page-content mt-100 mb-100">
+    <div class="container wide">
+        <div class="row">
+            <div class="col-lg-12 order-1 order-lg-2 mb-md-80 mb-sm-80">
+                <div class="row product-isotope shop-product-wrap five-column">
+                    @foreach (var product in Model.wemenTrouser)
+                    {
+                        <div class="col-12 col-lg-4 col-md-6 col-sm-6 mb-45">
+                            <div class="single-product">
+                                <div class="single-product__image">
+                                    <a class="image-wrap" href="shop-product-basic.html">
+                                        <img src="@product.Picture" class="img-fluid" alt="@product.PictureAlt" title="@product.PictureTitle" style="height: 300px">
+                                    </a>
+                                    <div class="single-product__floating-badges">
+                                    </div>
+                                </div>
+                                <div class="single-product__content">
+                                    <div class="title">
+                                        <h3>
+                                            <a href="shop-product-basic.html">@product.Name</a>
+                                        </h3>
+                                        <a href="#">اضافه به سبد خرید</a>
+                                    </div>
+                                    <div class="price">
+                                        @if (product.HasDiscount)
+                                        {
+                                            <span class="main-price discounted">@product.Price نومان</span>
+                                            <br />
+                                            <span class="discounted-price" style="color: red">@product.PriceWithDiscount تومان</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="main-price">@product.Price نومان</span>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

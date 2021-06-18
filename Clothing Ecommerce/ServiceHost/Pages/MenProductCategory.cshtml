@@ -1,6 +1,6 @@
 ﻿@page
 @model ServiceHost.Pages.MenProductCategoryModel
-@{ 
+@{
     ViewData["Title"] = "گروه محصولات مردانه";
 }
 
@@ -54,15 +54,39 @@
                         <div class="col-12 col-lg-is-5 col-md-6 col-sm-6 mb-45 sale">
                             <div class="single-product">
                                 <div class="single-product__image">
-                                    <a class="image-wrap" href="shop-product-basic.html">
-                                        <img src="@productCategory.Picture" class="img-fluid" alt="@productCategory.PictureAlt"
-                                             title="@productCategory.PictureTitle" style="height: 350px">
-                                    </a>
+                                    @if (productCategory.Name == "تیشرت مردانه ")
+                                    {
+                                        <a class="image-wrap" asp-page="MenProductsTshirt">
+                                            <img src="@productCategory.Picture" class="img-fluid" alt="@productCategory.PictureAlt"
+                                                 title="@productCategory.PictureTitle" style="height: 350px">
+                                        </a>
+                                    }
+                                    @if (productCategory.Name == "پیراهن مردانه ")
+                                    {
+                                        <a class="image-wrap" asp-page="MenProductsShirt">
+                                            <img src="@productCategory.Picture" class="img-fluid" alt="@productCategory.PictureAlt"
+                                                 title="@productCategory.PictureTitle" style="height: 350px">
+                                        </a>
+                                    }
+                                    @if (productCategory.Name == "شلوار مردانه ")
+                                    {
+                                        <a class="image-wrap" asp-page="MenProductsTrouser">
+                                            <img src="@productCategory.Picture" class="img-fluid" alt="@productCategory.PictureAlt"
+                                                 title="@productCategory.PictureTitle" style="height: 350px">
+                                        </a>
+                                    }
+                                    @if (productCategory.Name == "لباس زیر مردانه ")
+                                    {
+                                        <a class="image-wrap" asp-page="MenProductsUnderwear">
+                                            <img src="@productCategory.Picture" class="img-fluid" alt="@productCategory.PictureAlt"
+                                                 title="@productCategory.PictureTitle" style="height: 350px">
+                                        </a>
+                                    }
                                 </div>
                                 <div class="single-product__content">
                                     <div class="text-center">
                                         <h3>
-                                            <a href="shop-product-basic.html">@productCategory.Name</a>
+                                            <a href="#">@productCategory.Name</a>
                                         </h3>
                                     </div>
                                 </div>

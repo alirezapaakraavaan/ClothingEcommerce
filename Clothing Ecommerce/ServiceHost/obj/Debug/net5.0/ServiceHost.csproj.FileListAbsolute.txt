@@ -217,3 +217,17 @@ D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debu
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Pages\WemenProductCategory.cshtml.g.cs
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Pages\MenProductCategory.cshtml.g.cs
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Pages\KidsProductCategory.cshtml.g.cs
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Components\Menu\Default.cshtml.g.cs
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Pages\Shared\Components\Footer\Default.cshtml.g.cs
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Pages\WemenProductsManto.cshtml.g.cs
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Pages\WemenProductsTshirt.cshtml.g.cs
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Pages\WemenProductsTrouser.cshtml.g.cs
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Pages\WemenProductsUnderwear.cshtml.g.cs
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Pages\MenProductsShirt.cshtml.g.cs
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Pages\MenProductsTrouser.cshtml.g.cs
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Pages\MenProductsTshirt.cshtml.g.cs
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Pages\MenProductsUnderwear.cshtml.g.cs
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Pages\WemenProductsShirt.cshtml.g.cs
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Pages\KidsProductsBaby.cshtml.g.cs
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Pages\KidsProductsBoy.cshtml.g.cs
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Pages\KidsProductsGirl.cshtml.g.cs

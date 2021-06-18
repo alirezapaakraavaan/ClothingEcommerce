@@ -1,0 +1,347 @@
+﻿<header class="header header-split header-sticky">
+    <div class="header-bottom pt-md-40 pb-md-40 pt-sm-40 pb-sm-40">
+        <div class="container wide">
+            <div class="header-bottom-container">
+                <div class="logo-with-offcanvas d-flex">
+                    <div class="offcanvas-about-icon mr-20 d-none d-lg-block">
+                        <a href="javascript:void(0)" id="offcanvas-about-icon">
+                            <i class="ion-navicon"></i>
+                        </a>
+                    </div>
+                    <div class="logo">
+                        <a asp-page="./Index">
+                            <img src="~/Theme/assets/images/logo.png" class="img-fluid" alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="header-bottom-navigation">
+                    <div class="site-main-nav d-none d-lg-block">
+
+                        <div class="split-navigation-container d-flex justify-content-center">
+                            <nav class="site-nav center-menu mr-100 mr-lg-80">
+                                <ul>
+                                    <li class="menu-item-has-children" style="padding-left: 80px">
+                                        <a href="#">گروه محصولات</a>
+                                        <ul class="sub-menu mega-menu mega-menu-column-4" style="width: 500px">
+                                            <li>
+                                                <a href="javascript:void(0)" class="mega-column-title">زنانه</a>
+                                                <ul class="mega-sub-menu">
+                                                    <li><a asp-page="WemenProductsManto">مانتو</a></li>
+                                                    <li><a asp-page="WemenProductsTshirt">تیشرت</a></li>
+                                                    <li><a asp-page="WemenProductsTrouser">شلوار</a></li>
+                                                    <li><a asp-page="WemenProductsShirt">بلوز</a></li>
+                                                    <li><a asp-page="WemenProductsUnderwear">لباس زیر</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)" class="mega-column-title">مردانه</a>
+                                                <ul class="mega-sub-menu">
+                                                    <li><a asp-page="MenProductsTshirt">تیشرت</a></li>
+                                                    <li><a asp-page="MenProductsTrouser">شلوار</a></li>
+                                                    <li><a asp-page="MenProductsShirt">بلوز</a></li>
+                                                    <li><a asp-page="MenProductsUnderwear">لباس زیر</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)" class="mega-column-title">بچه گانه</a>
+                                                <ul class="mega-sub-menu">
+                                                    <li><a asp-page="KidsProductsGirl">دخترانه</a></li>
+                                                    <li><a asp-page="KidsProductsBoy">پسرانه</a></li>
+                                                    <li><a asp-page="KidsProductsBaby">نوزاد</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <nav class="site-nav center-menu ml-100 ml-lg-80">
+                                <ul>
+                                    <li class="menu-item-has-children ">
+                                        <a href="javascript:void(0)">مقالات</a>
+                                        <ul class="sub-menu single-column-menu">
+                                            <li>
+                                                <a href="blog-standard-right-sidebar.html">گروه 1</a>
+                                            </li>
+                                            <li>
+                                                <a href="blog-grid-right-sidebar.html">گروه 2</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right-container">
+                    <div class="header-right-icons d-flex justify-content-end align-items-center h-100">
+                        <div class="single-icon search">
+                            <a href="javascript:void(0)" id="search-icon">
+                                <i class="ion-ios-search-strong"></i>
+                            </a>
+                        </div>
+                        <div class="single-icon user-login">
+                            <a href="shop-customer-login.html">
+                                <i class="ion-android-person"></i>
+                            </a>
+                        </div>
+                        <div class="single-icon cart">
+                            <a href="javascript:void(0)" id="offcanvas-cart-icon">
+                                <i class="ion-ios-cart"></i>
+                                <span class="count">3</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="site-mobile-navigation d-block d-lg-none">
+                <div id="dl-menu" class="dl-menuwrapper site-mobile-nav">
+                    <button class="dl-trigger hamburger hamburger--spin">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                    <ul class="dl-menu dl-menu-toggle">
+                        <li class="">
+                            <a href="#">گروه محصولات</a>
+                            <ul class="dl-submenu">
+                                <li class="">
+                                    <a href="#">زنانه</a>
+                                    <ul class="dl-submenu">
+                                        <li><a asp-page="WemenProductsManto">مانتو</a></li>
+                                        <li><a asp-page="WemenProductsTshirt">تیشرت</a></li>
+                                        <li><a asp-page="WemenProductsTrouser">شلوار</a></li>
+                                        <li><a asp-page="WemenProductsShirt">بلوز</a></li>
+                                        <li><a asp-page="WemenProductsUnderwear">لباس زیر</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">مردانه</a>
+                                    <ul class="dl-submenu">
+                                        <li><a asp-page="MenProductsTshirt">تیشرت</a></li>
+                                        <li><a asp-page="MenProductsTrouser">شلوار</a></li>
+                                        <li><a asp-page="MenProductsBoluz">بلوز</a></li>
+                                        <li><a asp-page="MenProductsUnderwear">لباس زیر</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">بچه گانه</a>
+                                    <ul class="dl-submenu">
+                                        <li><a asp-page="KidsProductsGirl">دخترانه</a></li>
+                                        <li><a asp-page="KidsProductsBoy">پسرانه</a></li>
+                                        <li><a asp-page="KidsProductsBaby">نوزاد</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">مقالات</a>
+                            <ul class="dl-submenu">
+                                <li>
+                                    <a href="#">گروه 1</a>
+                                </li>
+                                <li>
+                                    <a href="#">گروه 2</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="header-offcanvas about-overlay" id="about-overlay">
+    <div class="overlay-close inactive"></div>
+    <div class="overlay-content">
+
+        <span class="close-icon" id="about-close-icon">
+            <a href="javascript:void(0)">
+                <i class="ti-close"></i>
+            </a>
+        </span>
+
+        <div class="overlay-content-container d-flex flex-column justify-content-between h-100">
+            <div class="widget-wrapper">
+                <div class="single-widget">
+                    <h2 class="widget-title">درباره ما</h2>
+                    <p>
+                        At Lezada, we put a strong emphasis on simplicity, quality and usefulness of fashion products over other
+                        factors. Our fashion items never get outdated. They are not short-lived as normal fashion clothes.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="contact-widget">
+                <p class="email"><a href="mailto:contact@lezada.com">contact@lezada.com</a></p>
+                <p class="phone">(+00) 123 567990</p>
+
+                <div class="social-icons">
+                    <ul>
+                        <li>
+                            <a href="http://www.twitter.com/" data-tippy="Twitter" data-tippy-inertia="true"
+                               data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" target="_blank">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.facebook.com/" data-tippy="Facebook" data-tippy-inertia="true"
+                               data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" target="_blank">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.instagram.com/" data-tippy="Instagram" data-tippy-inertia="true"
+                               data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" target="_blank">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.youtube.com/" data-tippy="Youtube" data-tippy-inertia="true"
+                               data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" target="_blank">
+                                <i class="fa fa-youtube-play"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="cart-overlay" id="cart-overlay">
+    <div class="cart-overlay-close inactive"></div>
+    <div class="cart-overlay-content">
+
+        <span class="close-icon" id="cart-close-icon">
+            <a href="javascript:void(0)">
+                <i class="ion-android-close"></i>
+            </a>
+        </span>
+
+        <div class="offcanvas-cart-content-container">
+            <h3 class="cart-title">Cart</h3>
+
+            <div class="cart-product-wrapper">
+                <div class="cart-product-container  ps-scroll">
+                    <div class="single-cart-product">
+                        <span class="cart-close-icon">
+                            <a href="#"><i class="ti-close"></i></a>
+                        </span>
+                        <div class="image">
+                            <a href="shop-product-basic.html">
+                                <img src="~/Theme/assets/images/cart-product-image/01.jpg" class="img-fluid" alt="">
+                            </a>
+                        </div>
+                        <div class="content">
+                            <h5><a href="shop-product-basic.html">Dark Brown Leather Watch</a></h5>
+                            <p><span class="cart-count">2 x </span> <span class="discounted-price">$180.00</span></p>
+
+                        </div>
+                    </div>
+
+                    <div class="single-cart-product">
+                        <span class="cart-close-icon">
+                            <a href="#"><i class="ti-close"></i></a>
+                        </span>
+                        <div class="image">
+                            <a href="shop-product-basic.html">
+                                <img src="~/Theme/assets/images/cart-product-image/02.jpg" class="img-fluid" alt="">
+                            </a>
+                        </div>
+                        <div class="content">
+                            <h5><a href="shop-product-basic.html">Dining Chair</a></h5>
+                            <p><span class="cart-count">2 x </span> <span class="discounted-price">$220.00</span></p>
+
+                        </div>
+                    </div>
+                    <div class="single-cart-product">
+                        <span class="cart-close-icon">
+                            <a href="#"><i class="ti-close"></i></a>
+                        </span>
+                        <div class="image">
+                            <a href="shop-product-basic.html">
+                                <img src="~/Theme/assets/images/cart-product-image/03.jpg" class="img-fluid" alt="">
+                            </a>
+                        </div>
+                        <div class="content">
+                            <h5><a href="shop-product-basic.html">Creative Wooden Stand</a></h5>
+                            <p><span class="cart-count">2 x </span> <span class="discounted-price">$80.00</span></p>
+
+                        </div>
+                    </div>
+
+                    <div class="single-cart-product">
+                        <span class="cart-close-icon">
+                            <a href="#"><i class="ti-close"></i></a>
+                        </span>
+                        <div class="image">
+                            <a href="shop-product-basic.html">
+                                <img src="~/Theme/assets/images/cart-product-image/01.jpg" class="img-fluid" alt="">
+                            </a>
+                        </div>
+                        <div class="content">
+                            <h5><a href="shop-product-basic.html">Dark Brown Leather Watch</a></h5>
+                            <p><span class="cart-count">2 x </span> <span class="discounted-price">$180.00</span></p>
+
+                        </div>
+                    </div>
+
+                    <div class="single-cart-product">
+                        <span class="cart-close-icon">
+                            <a href="#"><i class="ti-close"></i></a>
+                        </span>
+                        <div class="image">
+                            <a href="shop-product-basic.html">
+                                <img src="~/Theme/assets/images/cart-product-image/02.jpg" class="img-fluid" alt="">
+                            </a>
+                        </div>
+                        <div class="content">
+                            <h5><a href="shop-product-basic.html">Creative Wooden Stand</a></h5>
+                            <p><span class="cart-count">2 x </span> <span class="discounted-price">$180.00</span></p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <p class="cart-subtotal">
+                    <span class="subtotal-title">Subtotal:</span>
+                    <span class="subtotal-amount">$200.00</span>
+                </p>
+
+                <div class="cart-buttons">
+                    <a href="shop-cart.html">view cart</a>
+                    <a href="shop-checkout.html">checkout</a>
+                </div>
+
+                <p class="free-shipping-text">
+                    ارسال رایگاه برای خرید های بلای 100 هزار تومان
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="search-overlay" id="search-overlay">
+
+    <span class="close-icon search-close-icon">
+        <a href="javascript:void(0)" id="search-close-icon">
+            <i class="ti-close"></i>
+        </a>
+    </span>
+    <div class="search-overlay-content">
+        <div class="input-box">
+            <form action="https://htmldemo.hasthemes.com/lezada-preview/lezada/index.html">
+                <input type="search" placeholder="محصول خود را جسنجو کنید...">
+            </form>
+        </div>
+        <div class="search-hint">
+            <span># برای جستجو دکمه ب ENTER و برای خروج دکمه ی Esc را بزنید</span>
+        </div>
+    </div>
+</div>
