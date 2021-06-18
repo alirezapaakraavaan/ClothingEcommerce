@@ -10,5 +10,6 @@ namespace _01_EcommerceQuery.Contract.Products
         List<ProductQueryModel> GetWemenTshirt();
         List<ProductQueryModel> GetWemenTrouser();
         List<ProductQueryModel> GetWemenUnderwear();
+        List<ProductQueryModel> Search(string value);
     }
 }
