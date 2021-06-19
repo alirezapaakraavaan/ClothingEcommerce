@@ -7,11 +7,14 @@ namespace ShopManagement.Application
 {
     public class ProductCategoryApplication : IProductCategoryApplication
     {
+        private readonly IFileUploader _fileUploader;
         private readonly IProductCategoryRepository _productCategoryRepository;
 
-        public ProductCategoryApplication(IProductCategoryRepository productCategoryRepository)
+        public ProductCategoryApplication(IProductCategoryRepository productCategoryRepository,
+            IFileUploader fileUploader)
         {
             _productCategoryRepository = productCategoryRepository;
+            _fileUploader = fileUploader;
         }
 
         public OperationResult Create(CreateProductCategory command)
@@ -21,7 +24,9 @@ namespace ShopManagement.Application
                 operation.Failed(ApplicationMessages.DuplicatedRecord);
 
             var slug = command.Slug.Slugify();
-            var productCategory = new ProductCategory(command.Name, command.Picture, command.PictureAlt,
+            var picturePath = $"{command.Slug}";
+            var fileName = _fileUploader.Upload(command.Picture, picturePath);
+            var productCategory = new ProductCategory(command.Name, fileName, command.PictureAlt,
                 command.PictureTitle, slug, command.Keywords, command.MetaDescription, command.MainCategoryId);
 
             _productCategoryRepository.Create(productCategory);
@@ -40,7 +45,9 @@ namespace ShopManagement.Application
                 operation.Failed(ApplicationMessages.DuplicatedRecord);
 
             var slug = command.Slug.Slugify();
-            productCategory.Edit(command.Name, command.Picture, command.PictureAlt,
+            var picturePath = $"{command.Slug}";
+            var fileName = _fileUploader.Upload(command.Picture, picturePath);
+            productCategory.Edit(command.Name, fileName, command.PictureAlt,
                 command.PictureTitle, slug, command.Keywords, command.MetaDescription, command.MainCategoryId);
 
             _productCategoryRepository.SaveChanges();

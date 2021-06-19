@@ -7,11 +7,13 @@ namespace ShopManagement.Application
 {
     public class MainCategoryApplication : IMainCategoryApplication
     {
+        private readonly IFileUploader _fileUploader;
         private readonly IMainCategoryRepository _mainCategoryRepository;
 
-        public MainCategoryApplication(IMainCategoryRepository mainCategoryRepository)
+        public MainCategoryApplication(IMainCategoryRepository mainCategoryRepository, IFileUploader fileUploader)
         {
             _mainCategoryRepository = mainCategoryRepository;
+            _fileUploader = fileUploader;
         }
 
         public OperationResult Create(CreateMainCategory command)
@@ -19,7 +21,9 @@ namespace ShopManagement.Application
             var operation = new OperationResult();
 
             var slug = command.Slug.Slugify();
-            var mainCategory = new MainCategory(command.Name, command.Picture, command.PictureAlt, command.PictureTitle,
+            var pictureName = _fileUploader.Upload(command.Picture, "MainCategories");
+
+            var mainCategory = new MainCategory(command.Name, pictureName, command.PictureAlt, command.PictureTitle,
                 command.Keywords, command.MetaDescription, slug);
 
             _mainCategoryRepository.Create(mainCategory);
@@ -38,7 +42,8 @@ namespace ShopManagement.Application
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
 
             var slug = command.Slug.Slugify();
-            mainCategory.Edit(command.Name, command.Picture, command.PictureAlt, command.PictureTitle,
+            var pictureName = _fileUploader.Upload(command.Picture, "MainCategories");
+            mainCategory.Edit(command.Name, pictureName, command.PictureAlt, command.PictureTitle,
                 command.Keywords, command.MetaDescription, slug);
 
             _mainCategoryRepository.SaveChanges();

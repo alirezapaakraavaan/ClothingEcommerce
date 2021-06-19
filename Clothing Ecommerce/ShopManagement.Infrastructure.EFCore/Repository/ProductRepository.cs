@@ -16,6 +16,11 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
             _context = context;
         }
 
+        public Product GetProductWithCategory(long id)
+        {
+            return _context.Products.Include(x => x.ProductCategory).FirstOrDefault(x => x.Id == id);
+        }
+
         public EditProduct GetDetails(long id)
         {
             return _context.Products.Select(x => new EditProduct
@@ -27,7 +32,6 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 MetaDescription = x.MetaDescription,
                 Name = x.Name,
                 Slug = x.Slug,
-                Picture = x.Picture,
                 PictureAlt = x.PictureAlt,
                 PictureTitle = x.PictureTitle,
                 ShortDescription = x.ShortDescription,

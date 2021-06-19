@@ -23,7 +23,6 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 Id = x.Id,
                 BtnText = x.BtnText,
                 Hashtag = x.Hashtag,
-                Picture = x.Picture,
                 PictureAlt = x.PictureAlt,
                 PictureTitle = x.PictureTitle,
                 Title = x.Title,
