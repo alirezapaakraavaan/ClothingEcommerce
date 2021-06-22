@@ -7,6 +7,7 @@ using DiscountManagement.Infrastructure.EFCore;
 using InventoryManagement.Application.Contracts;
 using InventoryManagement.Infrastructure.EFCore;
 using Microsoft.EntityFrameworkCore;
+using ShopManagement.Domain.CommentAgg;
 using ShopManagement.Domain.ProductPictureAgg;
 using ShopManagement.Infrastructure.EFCore;
 
@@ -374,6 +375,7 @@ namespace _01_EcommerceQuery.Query
             var product = _context.Products
                 .Include(x => x.ProductCategory)
                 .Include(x => x.ProductPictures)
+                .Include(x => x.Comments)
                 .Where(x => !x.IsRemoved)
                 .Select(x =>
                     new ProductQueryModel
@@ -390,6 +392,7 @@ namespace _01_EcommerceQuery.Query
                         ProductCategorySlug = x.ProductCategory.Slug,
                         ShortDescription = x.ShortDescription,
                         MetaDescription = x.MetaDescription,
+                        Comments = MapComments(x.Comments),
                         ProductPictures = MapProductPictures(x.ProductPictures),
                         Keywords = x.Keywords
                     }).FirstOrDefault(x => x.Slug == slug);
@@ -426,6 +429,17 @@ namespace _01_EcommerceQuery.Query
             }
 
             return product;
+        }
+
+        private static List<CommentQueryModel> MapComments(IEnumerable<Comment> comments)
+        {
+            return comments.Where(x => !x.IsCanceled && x.IsConfirmed).Select(x => new CommentQueryModel
+            {
+                Id = x.Id,
+                Message = x.Message,
+                Name = x.Name,
+                CreationDate = x.CreationDate.ToFarsi()
+            }).OrderByDescending(x=>x.Id).ToList();
         }
 
         private static List<ProductPictureQueryModel> MapProductPictures(IEnumerable<ProductPicture> productPictures)

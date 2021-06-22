@@ -25,5 +25,6 @@ namespace _01_EcommerceQuery.Contract.Products
         public string MetaDescription { get; set; }
         public string ProductCategorySlug { get; set; }
         public List<ProductPictureQueryModel> ProductPictures { get; set; }
+        public List<CommentQueryModel> Comments { get; set; }
     }
 }
