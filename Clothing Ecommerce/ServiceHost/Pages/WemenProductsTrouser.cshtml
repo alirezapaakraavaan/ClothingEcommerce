@@ -62,8 +62,8 @@
                         <div class="col-12 col-lg-4 col-md-6 col-sm-6 mb-45">
                             <div class="single-product">
                                 <div class="single-product__image">
-                                    <a class="image-wrap" href="shop-product-basic.html">
-                                        <img src="@product.Picture" class="img-fluid" alt="@product.PictureAlt" title="@product.PictureTitle" style="height: 300px">
+                                    <a class="image-wrap" asp-page="/Product" asp-route-id="@product.Slug">
+                                        <img src="~/Theme/assets/img/products/@product.Picture" class="img-fluid" alt="@product.PictureAlt" title="@product.PictureTitle" style="height: 300px">
                                     </a>
                                     <div class="single-product__floating-badges">
                                     </div>
@@ -71,9 +71,8 @@
                                 <div class="single-product__content">
                                     <div class="title">
                                         <h3>
-                                            <a href="shop-product-basic.html">@product.Name</a>
+                                            <a asp-page="/Product" asp-route-id="@product.Slug">@product.Name</a>
                                         </h3>
-                                        <a href="#">اضافه به سبد خرید</a>
                                     </div>
                                     <div class="price">
                                         @if (product.HasDiscount)

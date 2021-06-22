@@ -29,8 +29,9 @@ namespace _01_EcommerceQuery.Query
                     x.StartDate < DateTime.Now && x.EndDate > DateTime.Now)
                 .Select(x => new {x.DiscountRate, x.ProductId}).ToList();
 
-            var inventory = _inventoryContext.Inventories.Select(x =>
-                new {x.ProductId, x.UnitPrice}).ToList();
+            var inventory = _inventoryContext.Inventories
+                .Where(x=>x.IsInStock)
+                .Select(x => new {x.ProductId, x.UnitPrice}).ToList();
 
             var products = _context.Products.Include(x => x.ProductCategory)
                 .Where(x => !x.IsRemoved && x.ProductCategoryId == 8)
@@ -52,6 +53,7 @@ namespace _01_EcommerceQuery.Query
                 {
                     var price = productInventory.UnitPrice;
                     product.Price = price.ToMoney();
+                    product.IsInStock = true;
 
                     var discount = discounts.FirstOrDefault(x => x.ProductId == product.Id);
                     if (discount != null)
@@ -64,7 +66,7 @@ namespace _01_EcommerceQuery.Query
                     }
                 }
             }
-            return products;
+            return products.Where(x=>x.IsInStock).ToList();
         }
 
         public List<ProductQueryModel> GetGirlsProducts()
@@ -73,8 +75,9 @@ namespace _01_EcommerceQuery.Query
                     x.StartDate < DateTime.Now && x.EndDate > DateTime.Now)
                 .Select(x => new { x.DiscountRate, x.ProductId }).ToList();
 
-            var inventory = _inventoryContext.Inventories.Select(x =>
-                new { x.ProductId, x.UnitPrice }).ToList();
+            var inventory = _inventoryContext.Inventories
+                .Where(x=>x.IsInStock)
+                .Select(x => new { x.ProductId, x.UnitPrice }).ToList();
 
             var products = _context.Products.Include(x => x.ProductCategory)
                 .Where(x => !x.IsRemoved && x.ProductCategoryId == 9)
@@ -96,6 +99,7 @@ namespace _01_EcommerceQuery.Query
                 {
                     var price = productInventory.UnitPrice;
                     product.Price = price.ToMoney();
+                    product.IsInStock = true;
 
                     var discount = discounts.FirstOrDefault(x => x.ProductId == product.Id);
                     if (discount != null)
@@ -108,7 +112,7 @@ namespace _01_EcommerceQuery.Query
                     }
                 }
             }
-            return products;
+            return products.Where(x=>x.IsInStock).ToList();
         }
 
         public List<ProductQueryModel> GetBoysProducts()
@@ -117,8 +121,9 @@ namespace _01_EcommerceQuery.Query
                     x.StartDate < DateTime.Now && x.EndDate > DateTime.Now)
                 .Select(x => new { x.DiscountRate, x.ProductId }).ToList();
 
-            var inventory = _inventoryContext.Inventories.Select(x =>
-                new { x.ProductId, x.UnitPrice }).ToList();
+            var inventory = _inventoryContext.Inventories
+                .Where(x=>x.IsInStock)
+                .Select(x => new { x.ProductId, x.UnitPrice }).ToList();
 
             var products = _context.Products.Include(x => x.ProductCategory)
                 .Where(x => !x.IsRemoved && x.ProductCategoryId == 8)
@@ -140,6 +145,7 @@ namespace _01_EcommerceQuery.Query
                 {
                     var price = productInventory.UnitPrice;
                     product.Price = price.ToMoney();
+                    product.IsInStock = true;
 
                     var discount = discounts.FirstOrDefault(x => x.ProductId == product.Id);
                     if (discount != null)
@@ -152,7 +158,7 @@ namespace _01_EcommerceQuery.Query
                     }
                 }
             }
-            return products;
+            return products.Where(x=>x.IsInStock).ToList();
         }
 
         public List<ProductQueryModel> GetBabysProducts()
@@ -161,8 +167,9 @@ namespace _01_EcommerceQuery.Query
                     x.StartDate < DateTime.Now && x.EndDate > DateTime.Now)
                 .Select(x => new { x.DiscountRate, x.ProductId }).ToList();
 
-            var inventory = _inventoryContext.Inventories.Select(x =>
-                new { x.ProductId, x.UnitPrice }).ToList();
+            var inventory = _inventoryContext.Inventories
+                .Where(x=>x.IsInStock)
+                .Select(x => new { x.ProductId, x.UnitPrice }).ToList();
 
             var products = _context.Products.Include(x => x.ProductCategory)
                 .Where(x => !x.IsRemoved && x.ProductCategoryId == 10)
@@ -184,6 +191,7 @@ namespace _01_EcommerceQuery.Query
                 {
                     var price = productInventory.UnitPrice;
                     product.Price = price.ToMoney();
+                    product.IsInStock = true;
 
                     var discount = discounts.FirstOrDefault(x => x.ProductId == product.Id);
                     if (discount != null)
@@ -196,7 +204,7 @@ namespace _01_EcommerceQuery.Query
                     }
                 }
             }
-            return products;
+            return products.Where(x=>x.IsInStock).ToList();
         }
     }
 }

@@ -79,7 +79,7 @@ namespace InventoryManagement.Infrastructure.EFCore.Repository
                 Operator = "مدیر سیستم",
                 OperatorId = x.OperatorId,
                 OrderId = x.OrderId
-            }).OrderByDescending(x=>x.Id).ToList();
+            }).OrderByDescending(x => x.Id).ToList();
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using InventoryManagement.Domain.InventoryAgg;
+﻿using InventoryManagement.Domain.InventoryAgg;
 using InventoryManagement.Infrastructure.EFCore.Mapping;
 using Microsoft.EntityFrameworkCore;
 

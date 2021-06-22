@@ -1,0 +1,323 @@
+﻿@page "{id}/{size?}/{color?}"
+@model ServiceHost.Pages.ProductModel
+@{
+    ViewData["Title"] = "محصول";
+}
+
+<div class="breadcrumb-area breadcrumb-bg-2 pt-50 pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="breadcrumb-title">فروشگاه</h1>
+                <ul class="breadcrumb-list">
+                    <li class="breadcrumb-list__item"><a asp-page="/Index">خانه</a></li>
+                    <li class="breadcrumb-list__item breadcrumb-list__item--active">محصول: @Model.Product.Name</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="shop-page-wrapper mt-100 mb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="shop-product">
+                    <div class="row pb-100">
+                        <div class="col-lg-6 mb-md-70 mb-sm-70">
+                            <div class="shop-product__big-image-gallery-wrapper mb-30">
+                                <div class="shop-product-rightside-icons">
+                                    <span class="enlarge-icon">
+                                        <a class="btn-zoom-popup" href="#" data-tippy="Click to enlarge" data-tippy-placement="left"
+                                           data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50"
+                                           data-tippy-arrow="true" data-tippy-theme="sharpborder"><i class="ion-android-expand"></i></a>
+                                    </span>
+                                </div>
+                                <div class="shop-product__big-image-gallery-slider">
+                                    <div class="single-image">
+                                        <img src="~/Theme/assets/img/products/@Model.Product.Picture" class="img-fluid"
+                                             alt="@Model.Product.PictureAlt" title="@Model.Product.PictureTitle">
+                                    </div>
+                                    @foreach (var picture in Model.Product.ProductPictures)
+                                    {
+                                        <div class="single-image">
+                                            <img src="~/Theme/assets/img/products/@picture.Picture" class="img-fluid"
+                                                 alt="@picture.PictureAlt" title="@picture.PictureTitle">
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                            <div class="shop-product__small-image-gallery-wrapper">
+                                <div class="shop-product__small-image-gallery-slider">
+                                    <div class="single-image">
+                                        <img src="~/Theme/assets/img/products/@Model.Product.Picture" class="img-fluid"
+                                             alt="@Model.Product.PictureAlt" title="@Model.Product.PictureTitle">
+                                    </div>
+                                    @foreach (var picture in Model.Product.ProductPictures)
+                                    {
+                                        <div class="single-image">
+                                            <img src="~/Theme/assets/img/products/@picture.Picture" class="img-fluid"
+                                                 alt="@picture.PictureAlt" title="@picture.PictureTitle">
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="shop-product__description">
+                                <div class="shop-product__rating mb-15">
+                                    <span class="product-rating">
+                                        <i class="active ion-android-star"></i>
+                                        <i class="active ion-android-star"></i>
+                                        <i class="active ion-android-star"></i>
+                                        <i class="active ion-android-star"></i>
+                                        <i class="ion-android-star-outline"></i>
+                                    </span>
+
+                                    <span class="review-link ml-20">
+                                        <a href="#">(3 نظر مشتریان)</a>
+                                    </span>
+                                </div>
+                                <div class="shop-product__title mb-15">
+                                    <h2>@Model.Product.Name</h2>
+                                </div>
+                                <div class="shop-product__price mb-30">
+                                    @if (Model.Product.HasDiscount)
+                                    {
+                                        <span class="main-price discounted">@Model.Product.Price تومان</span><br />
+                                        <span class="discounted-price" style="color: red">@Model.Product.PriceWithDiscount تومان</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="main-price">@Model.Product.Price تومان</span>
+                                    }
+                                </div>
+
+
+                                <div class="shop-product__short-desc mb-50">
+                                    @Model.Product.ShortDescription
+                                    @if (Model.Product.IsInStock)
+                                    {
+                                        <span class="btn-success">موجود در انبار</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="btn-danger">ناموجود</span>
+                                    }
+                                </div>
+                                <div class="shop-product__block shop-product__block--size mb-20">
+                                    <div class="shop-product__block__title">سایز: </div>
+                                    <div class="shop-product__block__value">
+                                        <div class="shop-product-size-list">
+                                            <select class="form-control"
+                                                    asp-for="@Model.Product.Id"
+                                                    asp-items="new SelectList(Model.Product.Size)"
+                                                    onchange="changeProductSize('@Model.Product.Slug', this.value)">
+                                                <option value="0">انتخاب سایز</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shop-product__block shop-product__block--color mb-20">
+                                    <div class="shop-product__block__title">رنگ: </div>
+                                    <div class="shop-product__block__value">
+                                        <div class="shop-product-color-list">
+                                            <ul class="single-filter-widget--list single-filter-widget--list--color">
+                                                <li class="mb-0 pt-0 pb-0 mr-10">
+                                                    <select class="form-control"
+                                                            asp-for="@Model.Product.Id"
+                                                            asp-items="new SelectList(Model.Product.Color)"
+                                                            onchange="changeProductColor('@Model.Product.Slug', this.value)">
+                                                        <option value="0">انتخاب رنگ</option>
+                                                    </select>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shop-product__block shop-product__block--quantity mb-40">
+                                    <div class="shop-product__block__title">تعداد: </div>
+                                    <div class="shop-product__block__value">
+                                        <div class="pro-qty d-inline-block mx-0 pt-0">
+                                            <input type="text" value="1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="shop-product__buttons mb-40">
+                                    <a class="lezada-button lezada-button--medium" href="#">افزودن به سبد خرید</a>
+                                </div>
+                                <div class="quick-view-other-info pb-0">
+                                    <table>
+                                        <tr class="single-info">
+                                            <td class="quickview-title">کد: </td>
+                                            <td class="quickview-value">@Model.Product.Code</td>
+                                        </tr>
+                                        <tr class="single-info">
+                                            <td class="quickview-title">گروه: </td>
+                                            <td class="quickview-value">
+                                                <a href="#">@Model.Product.ProductCategorySlug</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="single-info">
+                                            <td class="quickview-title">تگ ها: </td>
+                                            <td class="quickview-value">
+                                                <a href="#">@Model.Product.Keywords</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="single-info">
+                                            <td class="quickview-title">اشتراک محصول: </td>
+                                            <td class="quickview-value">
+                                                <ul class="quickview-social-icons">
+                                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="shop-product__description-tab pt-100">
+                                <div class="tab-product-navigation tab-product-navigation--product-desc mb-50">
+                                    <div class="nav nav-tabs justify-content-center" id="nav-tab2" role="tablist">
+                                        <a class="nav-item nav-link active" id="product-tab-1" data-toggle="tab" href="#product-series-1"
+                                           role="tab" aria-selected="true">توضیحات</a>
+                                        <a class="nav-item nav-link" id="product-tab-3" data-toggle="tab" href="#product-series-3"
+                                           role="tab" aria-selected="false">نظرات (3)</a>
+                                    </div>
+                                </div>
+                                <div class="tab-content" id="nav-tabContent2">
+
+                                    <div class="tab-pane fade show active" id="product-series-1" role="tabpanel"
+                                         aria-labelledby="product-tab-1">
+                                        <div class="shop-product__long-desc mb-30">
+                                            <p>
+                                                @Model.Product.Description
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="product-series-3" role="tabpanel" aria-labelledby="product-tab-3">
+                                        <div class="shop-product__review">
+                                            <h2 class="review-title mb-20">3 نظر برای: @Model.Product.Name</h2>
+                                            <div class="single-review">
+                                                <div class="single-review__image">
+                                                    <img src="assets/images/user/user1.jpg" class="img-fluid" alt="">
+                                                </div>
+                                                <div class="single-review__content">
+                                                    <div class="shop-product__rating">
+                                                        <span class="product-rating">
+                                                            <i class="active ion-android-star"></i>
+                                                            <i class="active ion-android-star"></i>
+                                                            <i class="active ion-android-star"></i>
+                                                            <i class="active ion-android-star"></i>
+                                                            <i class="ion-android-star-outline"></i>
+                                                        </span>
+                                                    </div>
+                                                    <p class="username">Scott James <span class="date">/ April 5, 2018</span></p>
+                                                    <p class="message">
+                                                        Thanks for always keeping your HTML themes up to date. Your level of support and
+                                                        dedication is second to none.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="single-review">
+                                                <div class="single-review__image">
+                                                    <img src="assets/images/user/user2.jpg" class="img-fluid" alt="">
+                                                </div>
+                                                <div class="single-review__content">
+                                                    <div class="shop-product__rating">
+                                                        <span class="product-rating">
+                                                            <i class="active ion-android-star"></i>
+                                                            <i class="active ion-android-star"></i>
+                                                            <i class="active ion-android-star"></i>
+                                                            <i class="active ion-android-star"></i>
+                                                            <i class="ion-android-star-outline"></i>
+                                                        </span>
+                                                    </div>
+                                                    <p class="username">Owen Christ <span class="date">/ April 7, 2018</span></p>
+                                                    <p class="message">
+                                                        I didn’t expect this poster to arrive folded. Now there are lines on the poster and one
+                                                        sad Ninja.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="single-review">
+                                                <div class="single-review__image">
+                                                    <img src="assets/images/user/user3.jpg" class="img-fluid" alt="">
+                                                </div>
+                                                <div class="single-review__content">
+                                                    <div class="shop-product__rating">
+                                                        <span class="product-rating">
+                                                            <i class="active ion-android-star"></i>
+                                                            <i class="active ion-android-star"></i>
+                                                            <i class="active ion-android-star"></i>
+                                                            <i class="active ion-android-star"></i>
+                                                            <i class="ion-android-star-outline"></i>
+                                                        </span>
+                                                    </div>
+                                                    <p class="username">Edna Watson <span class="date">/ April 5, 2018</span></p>
+                                                    <p class="message">
+                                                        Can’t wait to start mixin’ with this one! Irba-irr-Up-up-up-up-date your theme!
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <h2 class="review-title mb-20">نطر دهید</h2>
+                                            <p class="text-center">
+                                                ایمیل شما نشان داده نخواهد شد. بخش های اجباری با * مشخص شده اند
+                                            </p>
+                                            <div class="lezada-form lezada-form--review">
+                                                <form action="#">
+                                                    <div class="row">
+                                                        <div class="col-lg-6 mb-20">
+                                                            <input type="text" placeholder="نام *" required>
+                                                        </div>
+                                                        <div class="col-lg-6 mb-20">
+                                                            <input type="email" placeholder="ایمیل *" required>
+                                                        </div>
+                                                        <div class="col-lg-12 mb-20">
+                                                            <span class="rating-title mr-30">امتیاز شما</span>
+                                                            <span class="product-rating">
+
+                                                                <i class="active ion-android-star-outline"></i>
+                                                                <i class="active ion-android-star-outline"></i>
+                                                                <i class="active ion-android-star-outline"></i>
+                                                                <i class="active ion-android-star-outline"></i>
+                                                                <i class="active ion-android-star-outline"></i>
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-lg-12 mb-20">
+                                                            <textarea cols="30" rows="10" placeholder="نظر شما *"></textarea>
+                                                        </div>
+                                                        <div class="col-lg-12 text-center">
+                                                            <button type="submit" class="lezada-button lezada-button--medium">ثبت</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Script{
+    <script>
+        function changeProductSize(slug, size) {
+            const url = window.location.href;
+            const domain = url.split("/")[0];
+            window.location.href = `${domain}/Product/${slug}/${size}`;
+        }
+    </script>
+}
