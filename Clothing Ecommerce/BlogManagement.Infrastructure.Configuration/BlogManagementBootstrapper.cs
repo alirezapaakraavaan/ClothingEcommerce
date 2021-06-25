@@ -1,4 +1,5 @@
 ﻿using _01_EcommerceQuery.Contract.ArticleCategories;
+using _01_EcommerceQuery.Contract.Articles;
 using _01_EcommerceQuery.Query;
 using BlogManagement.Application;
 using BlogManagement.Application.Contracts.Article;
@@ -23,6 +24,8 @@ namespace BlogManagement.Infrastructure.Configuration
             services.AddTransient<IArticleRepository, ArticleRepository>();
 
             services.AddTransient<IArticleCategoryQuery, ArticleCategoryQuery>();
+
+            services.AddTransient<IArticleQuery, ArticleQuery>();
 
             services.AddDbContext<BlogContext>(x => x.UseSqlServer(connectionString));
         }

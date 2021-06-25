@@ -257,3 +257,4 @@ D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debu
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Blog\Articles\Edit.cshtml.g.cs
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Blog\Articles\Index.cshtml.g.cs
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Pages\ArticleCategories.cshtml.g.cs
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Pages\Articles.cshtml.g.cs
