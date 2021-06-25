@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using _0_Framework.Application;
 using BlogManagement.Application.Contracts.ArticleCategory;
-using BlogManagement.Domain.ArticleCategory;
+using BlogManagement.Domain.ArticleCategoryAgg;
 
 namespace BlogManagement.Application
 {
@@ -56,6 +56,11 @@ namespace BlogManagement.Application
         public EditArticleCategory GetDetails(long id)
         {
             return _articleCategoryRepository.GetDetails(id);
+        }
+
+        public List<ArticleCategoryViewModel> GetArticleCategories()
+        {
+            return _articleCategoryRepository.GetArticleCategories();
         }
 
         public List<ArticleCategoryViewModel> Search(ArticleCategorySearchModel searchModel)

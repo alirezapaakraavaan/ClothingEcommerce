@@ -2,7 +2,7 @@
 using System.Linq;
 using _0_Framework.Infrastructure;
 using BlogManagement.Application.Contracts.ArticleCategory;
-using BlogManagement.Domain.ArticleCategory;
+using BlogManagement.Domain.ArticleCategoryAgg;
 
 namespace BlogManagement.Infrastructure.EfCore.Repository
 {
@@ -13,6 +13,11 @@ namespace BlogManagement.Infrastructure.EfCore.Repository
         public ArticleCategoryRepository(BlogContext context) : base(context)
         {
             _context = context;
+        }
+
+        public string GetSlugBy(long id)
+        {
+            return _context.ArticleCategories.Select(x => new {x.Id, x.Slug}).FirstOrDefault(x => x.Id == id)?.Slug;
         }
 
         public EditArticleCategory GetDetails(long id)
@@ -30,6 +35,15 @@ namespace BlogManagement.Infrastructure.EfCore.Repository
                 PictureAlt = x.PictureAlt,
                 PictureTitle = x.PictureTitle
             }).FirstOrDefault(x => x.Id == id);
+        }
+
+        public List<ArticleCategoryViewModel> GetArticleCategories()
+        {
+            return _context.ArticleCategories.Select(x => new ArticleCategoryViewModel
+            {
+                Id = x.Id,
+                Name = x.Name
+            }).ToList();
         }
 
         public List<ArticleCategoryViewModel> Search(ArticleCategorySearchModel searchModel)
