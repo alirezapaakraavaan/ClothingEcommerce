@@ -1,0 +1,56 @@
+﻿@page
+@model ServiceHost.Pages.ArticleCategoriesModel
+@{
+}
+
+<div class="breadcrumb-area breadcrumb-bg-1 pt-50 pb-70 mb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="breadcrumb-title">Blog</h1>
+                <ul class="breadcrumb-list">
+                    <li class="breadcrumb-list__item"><a href="index.html">HOME</a></li>
+                    <li class="breadcrumb-list__item breadcrumb-list__item--active">Blog</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="blog-page-wrapper mb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 order-1">
+                <div class="row">
+                    @foreach (var articleCategory in Model.ArticleCategory)
+                    {
+                        <div class="col-md-4 mb-60">
+                            <div class="single-slider-post">
+                                <div class="single-slider-post__image mb-30">
+                                    <a asp-page="/Article" asp-route-id="@articleCategory.Slug">
+                                        <img src="~/Theme/assets/img/products/@articleCategory.Picture" class="img-fluid"
+                                             alt="@articleCategory.PictureAlt" title="@articleCategory.PictureTitle">
+                                    </a>
+                                </div>
+                                <div class="single-slider-post__content">
+                                    <div class="post-date">
+                                        <i class="ion-android-calendar"></i>
+                                        <a href="blog-standard-left-sidebar.html"> @articleCategory.PublishDate</a>
+                                    </div>
+                                    <h2 class="post-title">
+                                        <a asp-page="/Article" asp-route-id="@articleCategory.Slug">@articleCategory.Name</a>
+                                    </h2>
+                                    <p class="post-excerpt">
+                                        @articleCategory.Description
+                                    </p>
+                                    <a asp-page="/Article" asp-route-id="@articleCategory.Slug" class="blog-readmore-btn">ادامه مطلب</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

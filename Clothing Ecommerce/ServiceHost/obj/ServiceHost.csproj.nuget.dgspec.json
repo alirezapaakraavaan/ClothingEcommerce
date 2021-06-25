@@ -28,6 +28,9 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\BlogMangement.Infrastructure.EfCore\\BlogManagement.Infrastructure.EfCore.csproj": {
+                "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\BlogMangement.Infrastructure.EfCore\\BlogManagement.Infrastructure.EfCore.csproj"
+              },
               "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\DiscountManagement.Infrastructure.EFCore\\DiscountManagement.Infrastructure.EFCore.csproj": {
                 "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\DiscountManagement.Infrastructure.EFCore\\DiscountManagement.Infrastructure.EFCore.csproj"
               },
@@ -282,6 +285,9 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\01_EcommerceQuery\\01_EcommerceQuery.csproj": {
+                "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\01_EcommerceQuery\\01_EcommerceQuery.csproj"
+              },
               "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\BlogManagement.Application\\BlogManagement.Application.csproj": {
                 "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\BlogManagement.Application\\BlogManagement.Application.csproj"
               },
