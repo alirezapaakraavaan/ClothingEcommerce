@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using _0_Framework.Application;
@@ -50,7 +51,7 @@ namespace BlogManagement.Infrastructure.EfCore.Repository
                 .Select(x => new ArticleViewModel
             {
                 Id = x.Id,
-                ShortDescription = x.ShortDescription,
+                ShortDescription = x.ShortDescription.Substring(0, Math.Min(x.ShortDescription.Length, 50)) + "...",
                 Title = x.Title,
                 Category = x.ArticleCategory.Name,
                 CategoryId = x.CategoryId,

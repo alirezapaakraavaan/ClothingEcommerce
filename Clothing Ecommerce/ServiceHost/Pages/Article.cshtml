@@ -1,0 +1,194 @@
+﻿@page
+@model ServiceHost.Pages.ArticleModel
+@{
+    ViewData["Title"] = "صفحه مقاله";
+}
+
+<div class="breadcrumb-area breadcrumb-bg-1 pt-50 pb-70 mb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="breadcrumb-title">مقاله</h1>
+                <ul class="breadcrumb-list">
+                    <li class="breadcrumb-list__item"><a asp-page="/Index">خانه</a></li>
+                    <li class="breadcrumb-list__item breadcrumb-list__item--active">@Model.Article.Title</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="blog-page-wrapper mb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 order-2 order-lg-1">
+                <div class="page-sidebar">
+                    <div class="single-sidebar-widget mb-40">
+                        <h2 class="single-sidebar-widget--title">گروه مقالات</h2>
+                        <ul class="single-sidebar-widget--list single-sidebar-widget--list--category">
+                            @foreach (var category in Model.ArticleCategory)
+                            {
+                                <li>
+                                    <a asp-page="./ArticleCategories" asp-route-id="@category.Slug">@category.Name </a>
+                                    <span class="quantity">@category.ArticlesCount</span>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 order-1 order-lg-2 mb-md-70 mb-sm-70">
+                <div class="row">
+                    <div class="col-md-12 mb-40">
+                        <div class="single-slider-post single-slider-post--sticky pb-60">
+                            <div class="single-slider-post__image single-slider-post--sticky__image mb-30">
+                                <img src="~/Theme/assets/img/products/@Model.Article.Picture" class="img-fluid"
+                                     alt="@Model.Article.PictureAlt" title="@Model.Article.Title">
+                            </div>
+                            <div class="single-slider-post__content single-slider-post--sticky__content">
+                                <div class="post-category mb-10">
+                                    <a href="#">@Model.Article.CategoryName</a>
+                                </div>
+                                <h2 class="post-title">
+                                    <a href="blog-single-post-left-sidebar.html">@Model.Article.Title</a>
+                                </h2>
+                                <div class="post-info d-flex flex-wrap align-items-center mb-50">
+                                    <div class="post-date mb-0 pl-30">
+                                        <i class="ion-android-calendar"></i>
+                                        <a href="#"> @Model.Article.PublishDate</a>
+                                    </div>
+                                    <div class="post-comment pl-30">
+                                        <i class="ion-ios-chatbubble-outline"></i>
+                                        <a href="#"> 4 Comments</a>
+                                    </div>
+                                </div>
+                                <div class="single-blog-post-section">
+                                    @Html.Raw(Model.Article.Description)
+                                </div>
+                                <div class="row mt-30 align-items-center">
+                                    <div class="col-md-6 text-center text-md-left mb-sm-15">
+                                        <div class="post-tags">
+                                            <i class="ion-ios-pricetags"></i>
+                                            <ul class="tag-list">
+                                                @foreach (var tag in Model.Article.KeywordsList)
+                                                {
+                                                <li>,<a asp-page="/Search", asp-route-value="@tag">@tag</a></li>
+                                                }
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 text-center text-md-right">
+                                        <div class="post-share">
+                                            <span>اشتراک گذاری این مقاله:</span>
+                                            <ul>
+                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mb-40">
+                        <div class="single-author">
+                            <div class="single-author__image">
+                                <img src="assets/images/user/user3.jpg" class="img-fluid" alt="">
+                            </div>
+                            <div class="single-author__content">
+                                <p class="username">Edna Watson</p>
+                                <p class="message">
+                                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                    est laboruLorem ipsum dolor sit amet datat non proident
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 mb-40">
+                        <h2 class="comment-title mb-30">Comments <span>(4)</span></h2>
+                        <div class="single-comment">
+                            <div class="single-comment__image">
+                                <img src="assets/images/user/user1.jpg" class="img-fluid" alt="">
+                            </div>
+                            <div class="single-comment__content">
+                                <p class="username">Scott James <span class="date">/ April 5, 2018</span></p>
+                                <p class="message">
+                                    Thanks for always keeping your WordPress themes up to date. Your level of support and dedication is
+                                    second to none.
+                                </p>
+                                <a href="#" class="reply-link"><i class="ion-reply"></i> reply</a>
+                            </div>
+                        </div>
+                        <div class="single-comment">
+                            <div class="single-comment__image">
+                                <img src="assets/images/user/user2.jpg" class="img-fluid" alt="">
+                            </div>
+                            <div class="single-comment__content">
+                                <p class="username">Edna Watson <span class="date">/ April 5, 2018</span></p>
+                                <p class="message">
+                                    Thanks for always keeping your WordPress themes up to date. Your level of support and dedication is
+                                    second to none.
+                                </p>
+                                <a href="#" class="reply-link"><i class="ion-reply"></i> reply</a>
+                            </div>
+                        </div>
+                        <div class="single-comment">
+                            <div class="single-comment__image">
+                                <img src="assets/images/user/user3.jpg" class="img-fluid" alt="">
+                            </div>
+                            <div class="single-comment__content">
+                                <p class="username">Owen Christ <span class="date">/ April 5, 2018</span></p>
+                                <p class="message">
+                                    Thanks for always keeping your WordPress themes up to date. Your level of support and dedication is
+                                    second to none.
+                                </p>
+                                <a href="#" class="reply-link"><i class="ion-reply"></i> reply</a>
+                            </div>
+                        </div>
+                        <div class="single-comment single-comment--reply">
+                            <div class="single-comment__image">
+                                <img src="assets/images/user/user1.jpg" class="img-fluid" alt="">
+                            </div>
+                            <div class="single-comment__content">
+                                <p class="username">Scott James <span class="date">/ April 5, 2018</span></p>
+                                <p class="message">
+                                    Thanks for always keeping your WordPress themes up to date. Your level of support and dedication is
+                                    second to none.
+                                </p>
+                                <a href="#" class="reply-link"><i class="ion-reply"></i> reply</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <h2 class="comment-title mb-30">Leave your thought here</h2>
+                        <div class="lezada-form comment-gorm">
+                            <form action="#">
+                                <div class="row">
+                                    <div class="col-lg-4 mb-20">
+                                        <input type="text" placeholder="Name (*)" required>
+                                    </div>
+                                    <div class="col-lg-4 mb-20">
+                                        <input type="email" placeholder="Email (*)" required>
+                                    </div>
+                                    <div class="col-lg-4 mb-20">
+                                        <input type="text" placeholder="Website">
+                                    </div>
+                                    <div class="col-lg-12 mb-20">
+                                        <textarea cols="30" rows="10" placeholder="Message"></textarea>
+                                    </div>
+                                    <div class="col-lg-12 text-center">
+                                        <button type="submit" class="lezada-button lezada-button--medium">submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

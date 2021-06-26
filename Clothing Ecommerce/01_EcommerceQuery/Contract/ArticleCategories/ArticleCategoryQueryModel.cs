@@ -9,5 +9,6 @@
         public string Description { get; set; }
         public string Slug { get; set; }
         public string PublishDate { get; set; }
+        public long ArticlesCount { get; set; }
     }
 }

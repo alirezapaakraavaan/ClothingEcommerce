@@ -4,6 +4,7 @@ using System.Linq;
 using _0_Framework.Application;
 using _01_EcommerceQuery.Contract.ArticleCategories;
 using BlogManagement.Infrastructure.EfCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace _01_EcommerceQuery.Query
 {
@@ -19,6 +20,7 @@ namespace _01_EcommerceQuery.Query
         public List<ArticleCategoryQueryModel> GetArticleCategories()
         {
             return _context.ArticleCategories
+                .Include(x=>x.Articles)
                 .Where(x=>x.CreationDate <= DateTime.Now)
                 .Select(x => new ArticleCategoryQueryModel
                 {
@@ -28,7 +30,8 @@ namespace _01_EcommerceQuery.Query
                     Picture = x.Picture,
                     Slug = x.Slug,
                     PictureAlt = x.PictureAlt,
-                    PictureTitle = x.PictureTitle
+                    PictureTitle = x.PictureTitle,
+                    ArticlesCount = x.Articles.Count
                 }).ToList();
         }
     }
