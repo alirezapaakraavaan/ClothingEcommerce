@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{id}"
 @model ServiceHost.Pages.ArticleModel
 @{
     ViewData["Title"] = Model.Article.Title;
@@ -74,7 +74,7 @@
                                             <ul class="tag-list">
                                                 @foreach (var tag in Model.Article.KeywordsList)
                                                 {
-                                                <li>,<a asp-page="/Search", asp-route-value="@tag">@tag</a></li>
+                                                    <li>,<a asp-page="/Search" , asp-route-value="@tag">@tag</a></li>
                                                 }
                                             </ul>
                                         </div>
@@ -95,93 +95,55 @@
                         </div>
                     </div>
 
-                    <div class="col-md-12 mb-40">
-                        <div class="single-author">
-                            <div class="single-author__image">
-                                <img src="assets/images/user/user3.jpg" class="img-fluid" alt="">
-                            </div>
-                            <div class="single-author__content">
-                                <p class="username">Edna Watson</p>
-                                <p class="message">
-                                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                    est laboruLorem ipsum dolor sit amet datat non proident
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="col-lg-12 mb-40">
-                        <h2 class="comment-title mb-30">Comments <span>(4)</span></h2>
-                        <div class="single-comment">
-                            <div class="single-comment__image">
-                                <img src="assets/images/user/user1.jpg" class="img-fluid" alt="">
+                        <h2 class="comment-title mb-30">کامنت ها <span>@Model.Article.Comments.Count</span></h2>
+                        @foreach (var comment in Model.Article.Comments)
+                        {
+                            <div class="single-comment" id="comment-@comment.Id">
+                                <div class="single-comment__image">
+                                    <img src="~/Theme/assets/images/user/user1.jpg" class="img-fluid" alt="">
+                                </div>
+                                <div class="single-comment__content">
+                                    <p class="username">
+                                        @comment.Name
+                                        <span class="date">/ @comment.CreationDate</span>
+                                    </p>
+                                    <p class="message">
+                                        @comment.Message
+                                    </p>
+                                    @if (comment.ParentId > 0)
+                                    {
+                                        <span>در پاسخ به: </span>
+                                        <a href="#comment-@comment.Id">@comment.ParentName</a>
+                                    }
+                                    <br/>
+                                    <a href="#postComment" onclick='$("#commentParentId").val(@comment.Id)' class="reply-link">
+                                        <i class="ion-reply"></i> جواب
+                                    </a>
+                                </div>
                             </div>
-                            <div class="single-comment__content">
-                                <p class="username">Scott James <span class="date">/ April 5, 2018</span></p>
-                                <p class="message">
-                                    Thanks for always keeping your WordPress themes up to date. Your level of support and dedication is
-                                    second to none.
-                                </p>
-                                <a href="#" class="reply-link"><i class="ion-reply"></i> reply</a>
-                            </div>
-                        </div>
-                        <div class="single-comment">
-                            <div class="single-comment__image">
-                                <img src="assets/images/user/user2.jpg" class="img-fluid" alt="">
-                            </div>
-                            <div class="single-comment__content">
-                                <p class="username">Edna Watson <span class="date">/ April 5, 2018</span></p>
-                                <p class="message">
-                                    Thanks for always keeping your WordPress themes up to date. Your level of support and dedication is
-                                    second to none.
-                                </p>
-                                <a href="#" class="reply-link"><i class="ion-reply"></i> reply</a>
-                            </div>
-                        </div>
-                        <div class="single-comment">
-                            <div class="single-comment__image">
-                                <img src="assets/images/user/user3.jpg" class="img-fluid" alt="">
-                            </div>
-                            <div class="single-comment__content">
-                                <p class="username">Owen Christ <span class="date">/ April 5, 2018</span></p>
-                                <p class="message">
-                                    Thanks for always keeping your WordPress themes up to date. Your level of support and dedication is
-                                    second to none.
-                                </p>
-                                <a href="#" class="reply-link"><i class="ion-reply"></i> reply</a>
-                            </div>
-                        </div>
-                        <div class="single-comment single-comment--reply">
-                            <div class="single-comment__image">
-                                <img src="assets/images/user/user1.jpg" class="img-fluid" alt="">
-                            </div>
-                            <div class="single-comment__content">
-                                <p class="username">Scott James <span class="date">/ April 5, 2018</span></p>
-                                <p class="message">
-                                    Thanks for always keeping your WordPress themes up to date. Your level of support and dedication is
-                                    second to none.
-                                </p>
-                                <a href="#" class="reply-link"><i class="ion-reply"></i> reply</a>
-                            </div>
-                        </div>
+                        }
                     </div>
                     <div class="col-lg-12">
-                        <h2 class="comment-title mb-30">Leave your thought here</h2>
-                        <div class="lezada-form comment-gorm">
-                            <form action="#">
+                        <h2 class="comment-title mb-30">نظر خود را به اشتراک بگذارید</h2>
+                        <div class="lezada-form comment-gorm" id="postComment">
+                            <form method="post">
                                 <div class="row">
                                     <div class="col-lg-4 mb-20">
-                                        <input type="text" placeholder="Name (*)" required>
+                                        <input type="text" name="name" placeholder="نام (*)" required>
                                     </div>
                                     <div class="col-lg-4 mb-20">
-                                        <input type="email" placeholder="Email (*)" required>
+                                        <input type="email" name="email" placeholder="ایمیل (*)" required>
                                     </div>
                                     <div class="col-lg-4 mb-20">
-                                        <input type="text" placeholder="Website">
+                                        <input type="text" name="website" placeholder="وبسایت">
                                     </div>
                                     <div class="col-lg-12 mb-20">
-                                        <textarea cols="30" rows="10" placeholder="Message"></textarea>
+                                        <textarea cols="30" rows="10" placeholder="پیام" name="message" id="message"></textarea>
                                     </div>
+                                    <input type="hidden" name="ownerRecordId" value="@Model.Article.Id" />
+                                    <input type="hidden" name="articleSlug" value="@Model.Article.Slug" />
+                                    <input type="hidden" name="parentId" id="commentParentId" value="" />
                                     <div class="col-lg-12 text-center">
                                         <button type="submit" class="lezada-button lezada-button--medium">submit</button>
                                     </div>

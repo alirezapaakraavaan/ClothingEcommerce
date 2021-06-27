@@ -1913,6 +1913,48 @@
           "bin/placeholder/BlogManagement.Infrastructure.EfCore.dll": {}
         }
       },
+      "CommentManagement.Application.Contracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "0_Framework": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CommentManagement.Application.Contracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CommentManagement.Application.Contracts.dll": {}
+        }
+      },
+      "CommentManagement.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "0_Framework": "1.0.0",
+          "CommentManagement.Application.Contracts": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CommentManagement.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CommentManagement.Domain.dll": {}
+        }
+      },
+      "CommentManagement.Infrastructure.EfCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "CommentManagement.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.7",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7"
+        },
+        "compile": {
+          "bin/placeholder/CommentManagement.Infrastructure.EfCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CommentManagement.Infrastructure.EfCore.dll": {}
+        }
+      },
       "DiscountManagement.Application.Contracts/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -6760,6 +6802,21 @@
       "path": "../BlogMangement.Infrastructure.EfCore/BlogManagement.Infrastructure.EfCore.csproj",
       "msbuildProject": "../BlogMangement.Infrastructure.EfCore/BlogManagement.Infrastructure.EfCore.csproj"
     },
+    "CommentManagement.Application.Contracts/1.0.0": {
+      "type": "project",
+      "path": "../CommentManagement.Application.Contracts/CommentManagement.Application.Contracts.csproj",
+      "msbuildProject": "../CommentManagement.Application.Contracts/CommentManagement.Application.Contracts.csproj"
+    },
+    "CommentManagement.Domain/1.0.0": {
+      "type": "project",
+      "path": "../CommentManagement.Domain/CommentManagement.Domain.csproj",
+      "msbuildProject": "../CommentManagement.Domain/CommentManagement.Domain.csproj"
+    },
+    "CommentManagement.Infrastructure.EfCore/1.0.0": {
+      "type": "project",
+      "path": "../CommentManagement.Infrasrtucture.EfCore/CommentManagement.Infrastructure.EfCore.csproj",
+      "msbuildProject": "../CommentManagement.Infrasrtucture.EfCore/CommentManagement.Infrastructure.EfCore.csproj"
+    },
     "DiscountManagement.Application.Contracts/1.0.0": {
       "type": "project",
       "path": "../DiscountManagement.Application.Contracts/DiscountManagement.Application.Contracts.csproj",
@@ -6809,6 +6866,8 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "BlogManagement.Infrastructure.EfCore >= 1.0.0",
+      "CommentManagement.Domain >= 1.0.0",
+      "CommentManagement.Infrastructure.EfCore >= 1.0.0",
       "DiscountManagement.Infrastructure.EFCore >= 1.0.0",
       "InventoryManagement.Infrastructure.EFCore >= 1.0.0",
       "ShopManagement.Infrastructure.EFCore >= 1.0.0"
@@ -6843,6 +6902,12 @@
           "projectReferences": {
             "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\BlogMangement.Infrastructure.EfCore\\BlogManagement.Infrastructure.EfCore.csproj": {
               "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\BlogMangement.Infrastructure.EfCore\\BlogManagement.Infrastructure.EfCore.csproj"
+            },
+            "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\CommentManagement.Domain\\CommentManagement.Domain.csproj": {
+              "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\CommentManagement.Domain\\CommentManagement.Domain.csproj"
+            },
+            "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\CommentManagement.Infrasrtucture.EfCore\\CommentManagement.Infrastructure.EfCore.csproj": {
+              "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\CommentManagement.Infrasrtucture.EfCore\\CommentManagement.Infrastructure.EfCore.csproj"
             },
             "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\DiscountManagement.Infrastructure.EFCore\\DiscountManagement.Infrastructure.EFCore.csproj": {
               "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\DiscountManagement.Infrastructure.EFCore\\DiscountManagement.Infrastructure.EFCore.csproj"
