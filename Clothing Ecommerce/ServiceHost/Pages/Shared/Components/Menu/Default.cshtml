@@ -1,4 +1,6 @@
-﻿@model _01_EcommerceQuery.MenuModel
+﻿@using _0_Framework.Application
+@model _01_EcommerceQuery.MenuModel
+@inject IAuthHelper AuthHelper;
 
 <header class="header header-split header-sticky">
     <div class="header-bottom pt-md-40 pb-md-40 pt-sm-40 pb-sm-40">
@@ -62,6 +64,12 @@
                                     <li>
                                         <a asp-page="ArticleCategories">مقالات</a>
                                     </li>
+                                    @if (AuthHelper.IsAuthenticated())
+                                    {
+                                        <li>
+                                            <a asp-page="Account" asp-page-handler="Logout">خروج</a>
+                                        </li>
+                                    }
                                 </ul>
                             </nav>
                         </div>
@@ -75,9 +83,18 @@
                             </a>
                         </div>
                         <div class="single-icon user-login">
-                            <a href="shop-customer-login.html">
-                                <i class="ion-android-person"></i>
-                            </a>
+                            @if (AuthHelper.IsAuthenticated())
+                            {
+                                <a asp-page="Profile">
+                                    <i class="ion-android-person"></i>
+                                </a>
+                            }
+                            else
+                            {
+                                <a asp-page="Account">
+                                    <i class="ion-android-person"></i>
+                                </a>
+                            }
                         </div>
                         <div class="single-icon cart">
                             <a href="javascript:void(0)" id="offcanvas-cart-icon">

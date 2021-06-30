@@ -1,0 +1,116 @@
+﻿@page
+@model ServiceHost.Pages.AccountModel
+@{
+    ViewData["Title"] = "ورود - ثبت نام";
+}
+
+<div class="breadcrumb-area breadcrumb-bg-1 pt-50 pb-70 mb-130">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="breadcrumb-title">Customer login</h1>
+                <ul class="breadcrumb-list">
+                    <li class="breadcrumb-list__item">
+                        <a asp-page="/Index">خانه</a>
+                    </li>
+                    <li class="breadcrumb-list__item breadcrumb-list__item--active">ورود - ثبت نام</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="login-area mb-130 mb-md-70 mb-sm-70 mb-xs-70 mb-xxs-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mb-md-50 mb-sm-50">
+                <div class="lezada-form login-form">
+                    @if (Model.LoginMessage != null)
+                    {
+                        <div class="alert alert-danger">@Model.LoginMessage</div>
+                    }
+                    <form method="post" asp-page-handler="Login">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="section-title section-title--login text-center mb-50">
+                                    <h2 class="mb-20">ورود</h2>
+                                    <p>!چه عالی که برگشنی</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 mb-60">
+                                <input type="text" name="username" placeholder="نام کاربری" required>
+                            </div>
+                            <div class="col-lg-12 mb-60">
+                                <input type="password" name="password" placeholder="رمز عبور" required>
+                            </div>
+                            <div class="col-lg-12 text-center mb-30">
+                                <button class="lezada-button lezada-button--medium">ورود</button>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <a href="#" class="reset-pass-link">رمز عبور را فراموش کرده ای؟</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="lezada-form login-form--register">
+                    @if (Model.RegisterMessage != null)
+                    {
+                        <div class="alert alert-danger">@Model.RegisterMessage</div>
+                    }
+                    <form method="post" asp-page-handler="Register">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="section-title section-title--login text-center mb-50">
+                                    <h2 class="mb-20">ثبت نام</h2>
+                                    <p>اگر حساب شخصی ندارید اینجا بسازید</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 mb-30">
+                                <label for="regEmail">
+                                    نام کامل
+                                    <span class="required">*</span>
+                                </label>
+                                <input type="text" name="fullname" id="regEmail" required>
+                            </div>
+                            <div class="col-lg-12 mb-30">
+                                <label for="regEmail">
+                                    نام کاربری
+                                    <span class="required">*</span>
+                                </label>
+                                <input type="text" name="username" id="regEmail" required>
+                            </div>
+                            <div class="col-lg-12 mb-30">
+                                <label for="regEmail">
+                                    موبایل
+                                    <span class="required">*</span>
+                                </label>
+                                <input type="text" name="mobile" id="regEmail" required>
+                            </div>
+                            <div class="col-lg-12 mb-50">
+                                <label for="regPassword">
+                                    رمز
+                                    <span class="required">*</span>
+                                </label>
+                                <input type="password" name="password" id="regPassword" required>
+                            </div>
+                            <div class="col-lg-12 mb-50">
+                                <label for="regPassword">
+                                    تایید رمز
+                                    <span class="required">*</span>
+                                </label>
+                                <input type="password" name="rePassword" id="regPassword" required>
+                            </div>
+                            <div class="col-lg-12 text-center">
+                                <button class="lezada-button lezada-button--medium">ثبت نام</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
