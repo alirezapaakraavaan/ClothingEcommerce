@@ -13,7 +13,7 @@ namespace ServiceHost.Areas.Administration.Pages.Inventory
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a73b7abb32ea2f93d7fef30d1d333b047405642e", @"/Areas/Administration/Pages/Inventory/OperationLog.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"207a7061cc403907cc85e7926cac9b30b57b6586", @"/Areas/Administration/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c5e25ad8efa72e2da71cf3335257970b7e2689da", @"/Areas/Administration/Pages/_ViewImports.cshtml")]
     public class Areas_Administration_Pages_Inventory_OperationLog : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<InventoryManagement.Application.Contracts.InventoryOperationViewModel>>
     {
         #pragma warning disable 1998

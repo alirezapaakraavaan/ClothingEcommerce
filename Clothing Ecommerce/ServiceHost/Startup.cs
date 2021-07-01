@@ -80,14 +80,16 @@ namespace ServiceHost
             services.AddTransient<IFileUploader, FileUploader>();
             services.AddTransient<IAuthHelper, AuthHelper>();
 
-            services.AddRazorPages().AddRazorPagesOptions(options =>
-            {
-                options.Conventions.AuthorizeAreaFolder("Administration", "/", "AdminArea");
-                options.Conventions.AuthorizeAreaFolder("Administration", "/Shop", "Shop");
-                options.Conventions.AuthorizeAreaFolder("Administration", "/Discounts", "Discount");
-                options.Conventions.AuthorizeAreaFolder("Administration", "/Accounts", "Account");
-                options.Conventions.AuthorizeAreaFolder("Administration", "/Inventory", "Inventory");
-            });
+            services.AddRazorPages()
+                .AddMvcOptions(options => options.Filters.Add<SecurityPageFilter>())
+                .AddRazorPagesOptions(options =>
+                {
+                    options.Conventions.AuthorizeAreaFolder("Administration", "/", "AdminArea");
+                    options.Conventions.AuthorizeAreaFolder("Administration", "/Shop", "Shop");
+                    options.Conventions.AuthorizeAreaFolder("Administration", "/Discounts", "Discount");
+                    options.Conventions.AuthorizeAreaFolder("Administration", "/Accounts", "Account");
+                    options.Conventions.AuthorizeAreaFolder("Administration", "/Inventory", "Inventory");
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

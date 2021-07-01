@@ -1,4 +1,5 @@
 ﻿@page
+@using ShopManagement.Configuration.Permissions
 @model ServiceHost.Areas.Administration.Pages.Shop.ProductCategories.IndexModel
 @{
 }
@@ -12,12 +13,12 @@
     <div class="col-sm-12">
         <h4 class="page-title pull-right">@ViewData["title"]</h4>
         <p class="pull-left">
-            <a class="btn btn-success btn-lg" href="#showmodal=@Url.Page("./Index", "Create")">ایجاد گروه محصولی جدید</a>
+            <a permission="@ShopPermissions.CreateProductCategories" class="btn btn-success btn-lg" href="#showmodal=@Url.Page("./Index", "Create")">ایجاد گروه محصولی جدید</a>
         </p>
     </div>
 </div>
 
-<div class="row">
+<div class="row" permission="@ShopPermissions.SearchProductCategories">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -43,7 +44,7 @@
     </div>
 </div>
 
-<div class="row" id="ProductCategoriesDiv">
+<div class="row" id="ProductCategoriesDiv" permission="@ShopPermissions.ListProductCategories">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -72,14 +73,14 @@
                                         </td>
                                         <td>@item.MainCategoryName</td>
                                         <td>
-                                            <a class="btn btn-warning pull-right m-rl-5"
+                                            <a permission="@ShopPermissions.EditProductCategories" class="btn btn-warning pull-right m-rl-5"
                                                href="#showmodal=@Url.Page("./Index", "Edit", new {id = item.Id})">
                                                 <i class="fa fa-edit"></i> ویرایش
                                             </a>
 
                                             @if (!item.IsRemoved)
                                             {
-                                                <a class="btn btn-danger pull-right m-rl-5" asp-page-handler="Remove" asp-route-id="@item.Id">
+                                                <a permission="@ShopPermissions.RemoveProductCategories" class="btn btn-danger pull-right m-rl-5" asp-page-handler="Remove" asp-route-id="@item.Id">
                                                     <i class="fa fa-remove"></i> حذف
                                                 </a>
                                             }

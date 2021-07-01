@@ -21,14 +21,14 @@ namespace _0_Framework.Application
 
         public void Signin(AuthViewModel account)
         {
-            /*var permissions = JsonConvert.SerializeObject(account.Permissions);*/
+            var permissions = JsonConvert.SerializeObject(account.Permissions);
             var claims = new List<Claim>
             {
                 new Claim("AccountId", account.Id.ToString()),
                 new Claim(ClaimTypes.Name, account.Fullname),
                 new Claim(ClaimTypes.Role, account.RoleId.ToString()),
                 new Claim("Username", account.Username),
-                //new Claim("permissions", permissions)
+                new Claim("permissions", permissions)
             };
 
             var claimsIdentity = new ClaimsIdentity(
