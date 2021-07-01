@@ -21,6 +21,11 @@ namespace AccountManagement.Infrastructure.EfCore.Repository
             return _context.Accounts.FirstOrDefault(x => x.Username == username);
         }
 
+        public Account GetUserMobileNumber(string number)
+        {
+            return _context.Accounts.FirstOrDefault(x => x.Mobile == number);
+        }
+
         public EditAccount GetDetails(long id)
         {
             return _context.Accounts.Select(x => new EditAccount

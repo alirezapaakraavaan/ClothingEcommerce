@@ -14,7 +14,7 @@
                     </div>
                     <div class="logo">
                         <a asp-page="./Index">
-                            <img src="~/Theme/assets/images/logo.png" class="img-fluid" alt="">
+                            <img src="~/Theme/assets/images/logo.png" class="img-fluid text-center" alt="">
                         </a>
                     </div>
                 </div>
@@ -77,6 +77,12 @@
                 </div>
                 <div class="header-right-container">
                     <div class="header-right-icons d-flex justify-content-end align-items-center h-100">
+                        @if (AuthHelper.CurrentAccountRole() == "1" || AuthHelper.CurrentAccountRole() == "3")
+                        {
+                            <div>
+                                <a href="../Administration" style="font-weight: bold">بخش ادمین</a>
+                            </div>
+                        }
                         <div class="single-icon search">
                             <a href="javascript:void(0)" id="search-icon">
                                 <i class="ion-ios-search-strong"></i>

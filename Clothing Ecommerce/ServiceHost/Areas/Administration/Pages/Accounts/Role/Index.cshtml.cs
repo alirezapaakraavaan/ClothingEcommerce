@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using AccountManagement.Application.Contracts.Account;
 using AccountManagement.Application.Contracts.Role;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -21,30 +20,6 @@ namespace ServiceHost.Areas.Administration.Pages.Accounts.Role
         public void OnGet()
         {
             Roles = _roleApplication.List();
-        }
-
-        public IActionResult OnGetCreate()
-        {
-            var command = new CreateRole();
-            return Partial("./Create", command);
-        }
-
-        public JsonResult OnPostCreate(CreateRole command)
-        {
-            var result = _roleApplication.Create(command);
-            return new JsonResult(result);
-        }
-
-        public IActionResult OnGetEdit(long id)
-        {
-            var role = _roleApplication.GetDetails(id);
-            return Partial("./Edit", role);
-        }
-
-        public JsonResult OnPostEdit(EditRole command)
-        {
-            var result = _roleApplication.Edit(command);
-            return new JsonResult(result);
         }
     }
 }

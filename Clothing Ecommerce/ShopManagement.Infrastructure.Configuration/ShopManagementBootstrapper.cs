@@ -1,4 +1,5 @@
-﻿using _01_EcommerceQuery.Contract.ProductCategories;
+﻿using _0_Framework.Infrastructure;
+using _01_EcommerceQuery.Contract.ProductCategories;
 using _01_EcommerceQuery.Contract.Products;
 using _01_EcommerceQuery.Contract.Slide;
 using _01_EcommerceQuery.Query;
@@ -10,6 +11,7 @@ using ShopManagement.Application.Contracts.Product;
 using ShopManagement.Application.Contracts.ProductCategory;
 using ShopManagement.Application.Contracts.ProductPicture;
 using ShopManagement.Application.Contracts.Slide;
+using ShopManagement.Configuration.Permissions;
 using ShopManagement.Domain.MainCategoryAgg;
 using ShopManagement.Domain.ProductAgg;
 using ShopManagement.Domain.ProductCategoryAgg;
@@ -52,6 +54,8 @@ namespace ShopManagement.Configuration
             services.AddTransient<IProductCategoryQueryMen, MenProductCategoryQuery>();
 
             services.AddTransient<IProductCategoryQueryKids, KidsProductCategoryQuery>();
+
+            services.AddTransient<IPermissionExposer, ShopPermissionExposer>();
 
             services.AddDbContext<ShopContext>(x => x.UseSqlServer(connectionString));
         }
