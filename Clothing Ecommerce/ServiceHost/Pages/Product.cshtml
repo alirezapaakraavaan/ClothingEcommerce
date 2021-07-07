@@ -84,15 +84,14 @@
                                     <h2>@Model.Product.Name</h2>
                                 </div>
                                 <div class="shop-product__price mb-30">
-                                    @if (Model.Product.HasDiscount)
-                                    {
-                                        <span class="main-price discounted">@Model.Product.Price تومان</span><br />
-                                        <span class="discounted-price" style="color: red">@Model.Product.PriceWithDiscount تومان</span>
-                                    }
-                                    else
-                                    {
-                                        <span class="main-price">@Model.Product.Price تومان</span>
-                                    }
+
+                                    <div id="priceWithDiscount" class="@(!Model.Product.HasDiscount ? "d-none" : "")">
+                                        <span class="main-price discounted" id="discountedOriginalPrice">@Model.Product.Price تومان</span><br />
+                                        <span class="discounted-price" style="color: red" id="discountedPrice">@Model.Product.PriceWithDiscount تومان</span>
+                                    </div>
+
+                                    <span class="@(Model.Product.HasDiscount ? "d-none" : "")" id="priceWithoutDiscount" class="main-price">@Model.Product.Price تومان</span>
+
                                 </div>
 
 
@@ -111,7 +110,7 @@
                                     <div class="shop-product__block__title">سایز: </div>
                                     <div class="shop-product__block__value">
                                         <div class="shop-product-size-list">
-                                            <select class="form-control" required
+                                            <select class="form-control" required id="productSize"
                                                     asp-for="@Model.Product.Id"
                                                     asp-items="new SelectList(Model.Product.Size)"
                                                     onchange="changeProductSize('@Model.Product.Slug', this.value)">
@@ -126,10 +125,9 @@
                                         <div class="shop-product-color-list">
                                             <ul class="single-filter-widget--list single-filter-widget--list--color">
                                                 <li class="mb-0 pt-0 pb-0 mr-10">
-                                                    <select class="form-control" required
+                                                    <select class="form-control" required id="productColor"
                                                             asp-for="@Model.Product.Id"
-                                                            asp-items="new SelectList(Model.Product.Color)"
-                                                            onchange="changeProductColor('@Model.Product.Slug', this.value)">
+                                                            asp-items="new SelectList(Model.Product.Color)">
                                                         <option value="0">انتخاب رنگ</option>
                                                     </select>
                                                 </li>
@@ -141,12 +139,13 @@
                                     <div class="shop-product__block__title">تعداد: </div>
                                     <div class="shop-product__block__value">
                                         <div class="pro-qty d-inline-block mx-0 pt-0">
-                                            <input type="text" value="1">
+                                            <input type="number" value="1" id="productCount">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="shop-product__buttons mb-40">
-                                    <a class="lezada-button lezada-button--medium" href="#">افزودن به سبد خرید</a>
+                                    <a class="lezada-button lezada-button--medium" onclick="addToCart('@Model.Product.Id',
+                                        '@Model.Product.Name', '@Model.Product.Picture')">افزودن به سبد خرید</a>
                                 </div>
                                 <div class="quick-view-other-info pb-0">
                                     <table>
@@ -263,9 +262,31 @@
 @section Script{
     <script>
         function changeProductSize(slug, size) {
-            const url = window.location.href;
-            const domain = url.split("/")[0];
-            window.location.href = `${domain}/Product/${slug}/${size}`;
+            const color = $("#productColor").val();
+            $.ajax({
+                url: `/api/Product/GetWemenProductPriceBy/${slug}/${size}/${color}`,
+                type: "Get",
+                contentType: "application/json",
+                success: function (result) {
+                    const price = `${result.price} تومان`;
+                    const priceWithDiscount = `${result.priceWithDiscount} تومان`;
+                    if (result.hasDiscount) {
+                        $("#priceWithoutDiscount").addClass("d-none");
+                        $("#priceWithDiscount").removeClass("d-none");
+                        $("#discountedOriginalPrice").text(price);
+                        $("#discountedPrice").text(priceWithDiscount);
+                    } else {
+                        $("#priceWithoutDiscount").removeClass("d-none");
+                        $("#priceWithDiscount").addClass("d-none");
+
+                        $("#priceWithoutDiscount").text(price); // set text
+                        // const text = $("#priceWithoutDiscount").text(); // get text
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
         }
     </script>
 }

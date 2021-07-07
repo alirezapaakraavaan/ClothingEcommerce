@@ -1,6 +1,7 @@
 using _01_EcommerceQuery.Contract.Products;
 using CommentManagement.Application.Contracts.Comment;
 using CommentManagement.Infrastructure.EfCore;
+using InventoryManagement.Application.Contracts;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 

@@ -9,6 +9,7 @@ using DiscountManagement.Infrastructure.EFCore;
 using InventoryManagement.Application.Contracts;
 using InventoryManagement.Infrastructure.EFCore;
 using Microsoft.EntityFrameworkCore;
+using ShopManagement.Application.Contracts.Order;
 using ShopManagement.Domain.ProductPictureAgg;
 using ShopManagement.Infrastructure.EFCore;
 
@@ -434,7 +435,7 @@ namespace _01_EcommerceQuery.Query
                 .Where(x => x.OwnerRecordId == product.Id)
                 .Where(x => !x.IsCanceled)
                 .Where(x => x.IsConfirmed)
-                .Select(x=>new CommentQueryModel
+                .Select(x => new CommentQueryModel
                 {
                     Id = x.Id,
                     Message = x.Message,
@@ -443,6 +444,20 @@ namespace _01_EcommerceQuery.Query
                 }).OrderByDescending(x => x.Id).ToList();
 
             return product;
+        }
+
+        public List<CartItem> CheckInventoryStatus(List<CartItem> cartItems)
+        {
+            var inventory = _inventoryContext.Inventories.ToList();
+
+            foreach (var cartItem in cartItems.Where(cartItem =>
+                inventory.Any(x => x.ProductId == cartItem.Id && x.IsInStock)))
+            {
+                var itemInventory = inventory.Find(x => x.ProductId == cartItem.Id && x.Size == cartItem.Size);
+                cartItem.IsInStock = itemInventory.CalculateCurrentCount() >= cartItem.Count;
+            }
+
+            return cartItems;
         }
 
         private static List<ProductPictureQueryModel> MapProductPictures(IEnumerable<ProductPicture> productPictures)

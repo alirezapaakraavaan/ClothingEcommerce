@@ -1,4 +1,5 @@
 ﻿using _0_Framework.Infrastructure;
+using _01_EcommerceQuery.Contract;
 using _01_EcommerceQuery.Contract.ProductCategories;
 using _01_EcommerceQuery.Contract.Products;
 using _01_EcommerceQuery.Contract.Slide;
@@ -56,6 +57,8 @@ namespace ShopManagement.Configuration
             services.AddTransient<IProductCategoryQueryKids, KidsProductCategoryQuery>();
 
             services.AddTransient<IPermissionExposer, ShopPermissionExposer>();
+
+            services.AddTransient<ICartCalculatorService, CartCalculatorService>();
 
             services.AddDbContext<ShopContext>(x => x.UseSqlServer(connectionString));
         }

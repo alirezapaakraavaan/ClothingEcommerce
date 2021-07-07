@@ -1,33 +1,20 @@
-using System.Linq;
-using AccountManagement.Domain.AccountAgg;
-using AccountManagement.Infrastructure.EfCore;
-using Microsoft.AspNetCore.Mvc;
+using _0_Framework.Application.Email;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ServiceHost.Pages
 {
     public class ForgotPasswordModel : PageModel
     {
-        private readonly IAccountRepository _accountRepository;
-        private readonly AccountContext _context;
+        private readonly IEmailService _emailService;
 
-        public ForgotPasswordModel(IAccountRepository accountRepository, AccountContext context)
+        public ForgotPasswordModel(IEmailService emailService)
         {
-            _accountRepository = accountRepository;
-            _context = context;
+            _emailService = emailService;
         }
 
         public void OnGet()
         {
+            _emailService.SendEmail("Salam", "Salam bar shoma", "alirezapakravan111@gmail.com");
         }
-
-        /*public IActionResult OnPostForgotPassword(string number)
-        {
-            var mobileNumber = _accountRepository.GetUserMobileNumber(number);
-            if (mobileNumber.Mobile == number)
-            {
-
-            }
-        }*/
     }
 }

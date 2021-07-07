@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using ShopManagement.Application.Contracts.Order;
 
 namespace _01_EcommerceQuery.Contract.Products
 {
@@ -12,5 +13,6 @@ namespace _01_EcommerceQuery.Contract.Products
         List<ProductQueryModel> GetWemenUnderwear();
         List<ProductQueryModel> Search(string value);
         ProductQueryModel GetDetails(string slug, string size, string color);
+        List<CartItem> CheckInventoryStatus(List<CartItem> cartItems);
     }
 }
