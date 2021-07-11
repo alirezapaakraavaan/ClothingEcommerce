@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <Folder Include="MainCategory\" />
-    <Folder Include="Order\" />
     <Folder Include="Slide\" />
     <Folder Include="ProductCategory\" />
   </ItemGroup>

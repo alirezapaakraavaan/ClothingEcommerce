@@ -136,6 +136,10 @@
             "MimeKit": {
               "target": "Package",
               "version": "[2.13.0, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[106.11.7, )"
             }
           },
           "imports": [
@@ -1681,6 +1685,9 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\01_EcommerceQuery\\01_EcommerceQuery.csproj": {
+                "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\01_EcommerceQuery\\01_EcommerceQuery.csproj"
+              },
               "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\InventoryManagement.Application.Contracts\\InventoryManagement.Application.Contracts.csproj": {
                 "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\InventoryManagement.Application.Contracts\\InventoryManagement.Application.Contracts.csproj"
               },
@@ -1751,6 +1758,9 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\AccountManagement.Infrastructure.EfCore\\AccountManagement.Infrastructure.EfCore.csproj": {
+                "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\AccountManagement.Infrastructure.EfCore\\AccountManagement.Infrastructure.EfCore.csproj"
+              },
               "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj": {
                 "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\InventoryManagement.Domain\\InventoryManagement.Domain.csproj"
               },
@@ -1783,6 +1793,73 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\InventoryManagement.Presentation.Api\\InventoryManagement.Presentation.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\InventoryManagement.Presentation.Api\\InventoryManagement.Presentation.Api.csproj",
+        "projectName": "InventoryManagement.Presentation.Api",
+        "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\InventoryManagement.Presentation.Api\\InventoryManagement.Presentation.Api.csproj",
+        "packagesPath": "C:\\Users\\Alireza\\.nuget\\packages\\",
+        "outputPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\InventoryManagement.Presentation.Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Alireza\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\01_EcommerceQuery\\01_EcommerceQuery.csproj": {
+                "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\01_EcommerceQuery\\01_EcommerceQuery.csproj"
+              },
+              "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\InventoryManagement.Application.Contracts\\InventoryManagement.Application.Contracts.csproj": {
+                "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\InventoryManagement.Application.Contracts\\InventoryManagement.Application.Contracts.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )"
             }
           },
           "imports": [
@@ -1846,8 +1923,14 @@
               "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\InventoryManagement.Infrastructure.Configuration\\InventoryManagement.Infrastructure.Configuration.csproj": {
                 "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\InventoryManagement.Infrastructure.Configuration\\InventoryManagement.Infrastructure.Configuration.csproj"
               },
+              "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\InventoryManagement.Presentation.Api\\InventoryManagement.Presentation.Api.csproj": {
+                "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\InventoryManagement.Presentation.Api\\InventoryManagement.Presentation.Api.csproj"
+              },
               "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\ShopManagement.Infrastructure.Configuration\\ShopManagement.Configuration.csproj": {
                 "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\ShopManagement.Infrastructure.Configuration\\ShopManagement.Configuration.csproj"
+              },
+              "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\ShopManagement.Presentation.Api\\ShopManagement.Presentation.Api.csproj": {
+                "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\ShopManagement.Presentation.Api\\ShopManagement.Presentation.Api.csproj"
               }
             }
           }
@@ -1862,6 +1945,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -2051,6 +2138,9 @@
               "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\0_Framework\\0_Framework.csproj": {
                 "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\0_Framework\\0_Framework.csproj"
               },
+              "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\InventoryManagement.Application.Contracts\\InventoryManagement.Application.Contracts.csproj": {
+                "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\InventoryManagement.Application.Contracts\\InventoryManagement.Application.Contracts.csproj"
+              },
               "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\ShopManagement.Application.Contracts\\ShopManagement.Application.Contracts.csproj": {
                 "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\ShopManagement.Application.Contracts\\ShopManagement.Application.Contracts.csproj"
               }
@@ -2120,6 +2210,9 @@
               },
               "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj": {
                 "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj"
+              },
+              "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\ShopManagement.Infrastructure.InventoryAcl\\ShopManagement.Infrastructure.InventoryAcl.csproj": {
+                "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\ShopManagement.Infrastructure.InventoryAcl\\ShopManagement.Infrastructure.InventoryAcl.csproj"
               }
             }
           }
@@ -2182,6 +2275,9 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\AccountManagement.Infrastructure.EfCore\\AccountManagement.Infrastructure.EfCore.csproj": {
+                "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\AccountManagement.Infrastructure.EfCore\\AccountManagement.Infrastructure.EfCore.csproj"
+              },
               "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
                 "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\ShopManagement.Domain\\ShopManagement.Domain.csproj"
               }
@@ -2200,17 +2296,142 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.6, )"
+              "version": "[5.0.7, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.6, )"
+              "version": "[5.0.7, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.6, )"
+              "version": "[5.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\ShopManagement.Infrastructure.InventoryAcl\\ShopManagement.Infrastructure.InventoryAcl.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\ShopManagement.Infrastructure.InventoryAcl\\ShopManagement.Infrastructure.InventoryAcl.csproj",
+        "projectName": "ShopManagement.Infrastructure.InventoryAcl",
+        "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\ShopManagement.Infrastructure.InventoryAcl\\ShopManagement.Infrastructure.InventoryAcl.csproj",
+        "packagesPath": "C:\\Users\\Alireza\\.nuget\\packages\\",
+        "outputPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\ShopManagement.Infrastructure.InventoryAcl\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Alireza\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\InventoryManagement.Application.Contracts\\InventoryManagement.Application.Contracts.csproj": {
+                "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\InventoryManagement.Application.Contracts\\InventoryManagement.Application.Contracts.csproj"
+              },
+              "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
+                "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\ShopManagement.Domain\\ShopManagement.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\ShopManagement.Presentation.Api\\ShopManagement.Presentation.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\ShopManagement.Presentation.Api\\ShopManagement.Presentation.Api.csproj",
+        "projectName": "ShopManagement.Presentation.Api",
+        "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\ShopManagement.Presentation.Api\\ShopManagement.Presentation.Api.csproj",
+        "packagesPath": "C:\\Users\\Alireza\\.nuget\\packages\\",
+        "outputPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\ShopManagement.Presentation.Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Alireza\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\01_EcommerceQuery\\01_EcommerceQuery.csproj": {
+                "projectPath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\01_EcommerceQuery\\01_EcommerceQuery.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             }
           },
           "imports": [

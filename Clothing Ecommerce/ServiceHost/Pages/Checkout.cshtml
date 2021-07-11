@@ -1,5 +1,6 @@
 ﻿@page
 @using _0_Framework.Application
+@using ShopManagement.Application.Contracts
 @model ServiceHost.Pages.CheckoutModel
 @{
     ViewData["Title"] = "تایید سبد خرید و پرداخت";
@@ -24,38 +25,11 @@
         <div class="row">
             <div class="col-12">
                 <div class="lezada-form">
-                    <form action="#" class="checkout-form">
-                        <div class="row row-40">
-                            <div class="col-lg-7 mb-20">
-                                <div id="billing-form" class="mb-40">
-                                    <h4 class="checkout-title">آدرس قبض</h4>
-                                    <div class="row">
-                                        <div class="col-md-6 col-12 mb-20">
-                                            <label>نام*</label>
-                                            <input type="text" placeholder="نام">
-                                        </div>
-                                        <div class="col-md-6 col-12 mb-20">
-                                            <label>نام خانوادگی*</label>
-                                            <input type="text" placeholder="نام خانوادگی">
-                                        </div>
-                                        <div class="col-md-12 col-12 mb-20">
-                                            <label>شماره موبایل*</label>
-                                            <input type="text" placeholder="شماره موبایل">
-                                        </div>
-                                        <div class="col-md-12 col-12 mb-20">
-                                            <label>شهر*</label>
-                                            <input type="text" placeholder="شهر">
-                                        </div>
-                                        <div class="col-12 mb-20">
-                                            <label>آدرس*</label>
-                                            <input type="text" placeholder="آدرس">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-5">
+                    <form method="post" class="checkout-form">
+                        <div class="row">
+                            <div class="col-lg-12">
                                 <div class="row">
-                                    <div class="col-12 mb-60">
+                                    <div class="col-md-6">
                                         <h4 class="checkout-title">مجموع سبد خرید</h4>
                                         <div class="checkout-cart-total">
                                             <h4>محصول <span>جمع کل</span></h4>
@@ -70,27 +44,19 @@
                                             <h4>مبلغ قابل برداخت <span>@Model.Cart.PayAmount.ToMoney() تومان</span></h4>
                                         </div>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-md-6">
                                         <h4 class="checkout-title">روش پرداخت</h4>
-                                        <div class="checkout-payment-method">
-                                            <div class="single-method">
-                                                <input type="radio" id="payment_bank" name="payment-method" value="bank">
-                                                <label for="payment_bank">پرداخت اینترنتی</label>
-                                                <p data-method="bank">
-                                                    Please send a Check to Store name with Store Street, Store Town, Store
-                                                    State, Store Postcode, Store Country.
-                                                </p>
-                                            </div>
-                                            <div class="single-method">
-                                                <input type="radio" id="payment_cash" name="payment-method" value="cash">
-                                                <label for="payment_cash">پرداخت نقدی</label>
-                                                <p data-method="cash">
-                                                    Please send a Check to Store name with Store Street, Store Town, Store
-                                                    State, Store Postcode, Store Country.
-                                                </p>
-                                            </div>
+                                        <div class="checkout-payment-method" style="padding-top: 108px;padding-bottom: 109px;">
+                                            @foreach (var method in PaymentMethod.GetList())
+                                            {
+                                                <div class="single-method">
+                                                    <input type="radio" id="payment_@method.Id" name="paymentMethod" value="@method.Id" @(PaymentMethod.GetList().First().Id == method.Id ? "checked" : "")>
+                                                    <label for="payment_@method.Id">@method.Name</label>
+                                                    <p data-method="@method.Id" style="display: @(PaymentMethod.GetList().First().Id == method.Id ? "block" : "none")">@method.Description</p>
+                                                </div>
+                                            }
                                         </div>
-                                        <a class="lezada-button lezada-button--medium mt-30">پرداخت</a>
+                                        <button class="lezada-button lezada-button--medium mt-30 " asp-page-handler="Pay">پرداخت</button>
                                     </div>
                                 </div>
                             </div>

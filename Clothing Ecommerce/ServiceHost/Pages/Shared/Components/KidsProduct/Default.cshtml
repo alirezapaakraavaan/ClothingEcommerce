@@ -16,11 +16,10 @@
                                     </div>
                                 </div>
                                 <div class="single-product__content">
-                                    <div class="title">
+                                    <div>
                                         <h3>
                                             <a asp-page="/Product" asp-route-id="@product.Slug">@product.Name</a>
                                         </h3>
-                                        <a href="#">اضافه به سبد خرید</a>
                                     </div>
                                     <div class="price">
                                         @if (product.HasDiscount)

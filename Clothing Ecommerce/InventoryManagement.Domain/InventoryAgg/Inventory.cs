@@ -7,25 +7,25 @@ namespace InventoryManagement.Domain.InventoryAgg
     public class Inventory : EntityBase
     {
         public long ProductId { get; private set; }
-        public double UnitPrice { get; private set; }
+        public double UnitProductPrice { get; private set; }
         public string Color { get; private set; }
         public string Size { get; private set; }
         public bool IsInStock { get; private set; }
         public List<InventoryOperation> Operations { get; private set; }
 
-        public Inventory(long productId, double unitPrice, string color, string size)
+        public Inventory(long productId, double unitProductPrice, string color, string size)
         {
             ProductId = productId;
-            UnitPrice = unitPrice;
+            UnitProductPrice = unitProductPrice;
             Color = color;
             Size = size;
             IsInStock = false;
         }
 
-        public void Edit(long productId, double unitPrice, string color, string size)
+        public void Edit(long productId, double unitProductPrice, string color, string size)
         {
             ProductId = productId;
-            UnitPrice = unitPrice;
+            UnitProductPrice = unitProductPrice;
             Color = color;
             Size = size;
         }

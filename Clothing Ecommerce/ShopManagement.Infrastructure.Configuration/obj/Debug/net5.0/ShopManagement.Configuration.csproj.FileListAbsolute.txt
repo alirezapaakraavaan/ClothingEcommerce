@@ -47,3 +47,11 @@ D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infra
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\CommentManagement.Domain.pdb
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\CommentManagement.Infrastructure.EfCore.dll
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\CommentManagement.Infrastructure.EfCore.pdb
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\ShopManagement.Infrastructure.InventoryAcl.dll
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\ShopManagement.Infrastructure.InventoryAcl.pdb
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\AccountManagement.Application.Contracts.dll
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\AccountManagement.Domain.dll
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\AccountManagement.Infrastructure.EfCore.dll
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\AccountManagement.Application.Contracts.pdb
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\AccountManagement.Domain.pdb
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Infrastructure.Configuration\bin\Debug\net5.0\AccountManagement.Infrastructure.EfCore.pdb

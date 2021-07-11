@@ -10,24 +10,25 @@
                             <div class="single-product">
                                 <div class="single-product__image">
                                     <a class="image-wrap" asp-page="/Product" asp-route-id="@product.Slug">
-                                        <img src="~/Theme/assets/img/products/@product.Picture" class="img-fluid" alt="@product.PictureAlt" title="@product.PictureTitle" style="height: 300px">
+                                        <img src="~/Theme/assets/img/products/@product.Picture" class="img-fluid"
+                                             alt="@product.PictureAlt" title="@product.PictureTitle" style="height: 300px">
                                     </a>
                                     <div class="single-product__floating-badges">
                                     </div>
                                 </div>
                                 <div class="single-product__content">
-                                    <div class="title">
+                                    <div>
                                         <h3> <a asp-page="/Product" asp-route-id="@product.Slug">@product.Name</a></h3>
                                     </div>
                                     <div class="price">
                                         @if (product.HasDiscount)
                                         {
-                                            <span class="main-price discounted">@product.Price نومان</span><br />
+                                            <span class="main-price discounted">@product.Price تومان</span><br />
                                             <span class="discounted-price" style="color: red">@product.PriceWithDiscount تومان</span>
                                         }
                                         else
                                         {
-                                            <span class="main-price">@product.Price نومان</span>
+                                            <span class="main-price">@product.Price تومان</span>
                                         }
                                     </div>
                                 </div>

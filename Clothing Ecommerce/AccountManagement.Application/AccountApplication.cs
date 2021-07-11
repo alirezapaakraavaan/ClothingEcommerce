@@ -36,8 +36,8 @@ namespace AccountManagement.Application
             var path = $"profilePhotos";
             var picturePath = _fileUploader.Upload(command.ProfilePhoto, path);
 
-            var account = new Account(command.Fullname, command.Username, password, command.RoleId, command.Mobile,
-                picturePath);
+            var account = new Account(command.Fullname, command.Username, command.City, command.Address, password,
+                command.RoleId, command.Mobile, picturePath);
 
             _accountRepository.Create(account);
             _accountRepository.SaveChanges();
@@ -121,6 +121,11 @@ namespace AccountManagement.Application
         public void Logout()
         {
             _authHelper.SignOut();
+        }
+
+        public List<AccountViewModel> GetAccounts()
+        {
+            return _accountRepository.GetAccounts();
         }
     }
 }

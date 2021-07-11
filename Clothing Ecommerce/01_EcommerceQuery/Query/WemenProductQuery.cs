@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using _0_Framework.Application;
 using _01_EcommerceQuery.Contract.Products;
-using CommentManagement.Domain.CommentAgg;
 using CommentManagement.Infrastructure.EfCore;
 using DiscountManagement.Infrastructure.EFCore;
 using InventoryManagement.Application.Contracts;
@@ -35,7 +34,7 @@ namespace _01_EcommerceQuery.Query
         {
             var inventory = _inventoryContext.Inventories
                 .Where(x => x.IsInStock)
-                .Select(x => new {x.ProductId, x.UnitPrice}).ToList();
+                .Select(x => new {x.ProductId, x.UnitProductPrice }).ToList();
 
             var discounts = _discountContext.CustomerDiscounts
                 .Where(x => x.StartDate < DateTime.Now && x.EndDate > DateTime.Now).Select(x =>
@@ -58,7 +57,7 @@ namespace _01_EcommerceQuery.Query
                 var productInventory = inventory.FirstOrDefault(x => x.ProductId == product.Id);
                 if (productInventory != null)
                 {
-                    var price = productInventory.UnitPrice;
+                    var price = productInventory.UnitProductPrice;
                     product.Price = price.ToMoney();
                     product.IsInStock = true;
 
@@ -81,7 +80,7 @@ namespace _01_EcommerceQuery.Query
         {
             var inventory = _inventoryContext.Inventories
                 .Where(x => x.IsInStock)
-                .Select(x => new {x.ProductId, x.UnitPrice}).ToList();
+                .Select(x => new {x.ProductId, x.UnitProductPrice }).ToList();
 
             var discounts = _discountContext.CustomerDiscounts
                 .Where(x => x.StartDate < DateTime.Now && x.EndDate > DateTime.Now).Select(x =>
@@ -104,7 +103,7 @@ namespace _01_EcommerceQuery.Query
                 var productInventory = inventory.FirstOrDefault(x => x.ProductId == product.Id);
                 if (productInventory != null)
                 {
-                    var price = productInventory.UnitPrice;
+                    var price = productInventory.UnitProductPrice;
                     product.Price = price.ToMoney();
                     product.IsInStock = true;
 
@@ -127,7 +126,7 @@ namespace _01_EcommerceQuery.Query
         {
             var inventory = _inventoryContext.Inventories
                 .Where(x => x.IsInStock)
-                .Select(x => new {x.ProductId, x.UnitPrice}).ToList();
+                .Select(x => new {x.ProductId, x.UnitProductPrice }).ToList();
 
             var discounts = _discountContext.CustomerDiscounts
                 .Where(x => x.StartDate < DateTime.Now && x.EndDate > DateTime.Now).Select(x =>
@@ -150,7 +149,7 @@ namespace _01_EcommerceQuery.Query
                 var productInventory = inventory.FirstOrDefault(x => x.ProductId == product.Id);
                 if (productInventory != null)
                 {
-                    var price = productInventory.UnitPrice;
+                    var price = productInventory.UnitProductPrice;
                     product.Price = price.ToMoney();
                     product.IsInStock = true;
 
@@ -173,7 +172,7 @@ namespace _01_EcommerceQuery.Query
         {
             var inventory = _inventoryContext.Inventories
                 .Where(x => x.IsInStock)
-                .Select(x => new {x.ProductId, x.UnitPrice}).ToList();
+                .Select(x => new {x.ProductId, x.UnitProductPrice }).ToList();
 
             var discounts = _discountContext.CustomerDiscounts
                 .Where(x => x.StartDate < DateTime.Now && x.EndDate > DateTime.Now).Select(x =>
@@ -196,7 +195,7 @@ namespace _01_EcommerceQuery.Query
                 var productInventory = inventory.FirstOrDefault(x => x.ProductId == product.Id);
                 if (productInventory != null)
                 {
-                    var price = productInventory.UnitPrice;
+                    var price = productInventory.UnitProductPrice;
                     product.Price = price.ToMoney();
                     product.IsInStock = true;
 
@@ -219,7 +218,7 @@ namespace _01_EcommerceQuery.Query
         {
             var inventory = _inventoryContext.Inventories
                 .Where(x => x.IsInStock)
-                .Select(x => new {x.ProductId, x.UnitPrice}).ToList();
+                .Select(x => new {x.ProductId, x.UnitProductPrice }).ToList();
 
             var discounts = _discountContext.CustomerDiscounts
                 .Where(x => x.StartDate < DateTime.Now && x.EndDate > DateTime.Now).Select(x =>
@@ -242,7 +241,7 @@ namespace _01_EcommerceQuery.Query
                 var productInventory = inventory.FirstOrDefault(x => x.ProductId == product.Id);
                 if (productInventory != null)
                 {
-                    var price = productInventory.UnitPrice;
+                    var price = productInventory.UnitProductPrice;
                     product.Price = price.ToMoney();
                     product.IsInStock = true;
 
@@ -265,7 +264,7 @@ namespace _01_EcommerceQuery.Query
         {
             var inventory = _inventoryContext.Inventories
                 .Where(x => x.IsInStock)
-                .Select(x => new {x.ProductId, x.UnitPrice}).ToList();
+                .Select(x => new {x.ProductId, x.UnitProductPrice }).ToList();
 
             var discounts = _discountContext.CustomerDiscounts
                 .Where(x => x.StartDate < DateTime.Now && x.EndDate > DateTime.Now).Select(x =>
@@ -288,7 +287,7 @@ namespace _01_EcommerceQuery.Query
                 var productInventory = inventory.FirstOrDefault(x => x.ProductId == product.Id);
                 if (productInventory != null)
                 {
-                    var price = productInventory.UnitPrice;
+                    var price = productInventory.UnitProductPrice;
                     product.Price = price.ToMoney();
                     product.IsInStock = true;
 
@@ -311,7 +310,7 @@ namespace _01_EcommerceQuery.Query
         {
             var inventory = _inventoryContext.Inventories
                 .Where(x => x.IsInStock)
-                .Select(x => new {x.ProductId, x.UnitPrice}).ToList();
+                .Select(x => new {x.ProductId, x.UnitProductPrice }).ToList();
 
             var discounts = _discountContext.CustomerDiscounts
                 .Where(x => x.StartDate < DateTime.Now && x.EndDate > DateTime.Now).Select(x =>
@@ -340,7 +339,7 @@ namespace _01_EcommerceQuery.Query
                 var productInventory = inventory.FirstOrDefault(x => x.ProductId == product.Id);
                 if (productInventory != null)
                 {
-                    var price = productInventory.UnitPrice;
+                    var price = productInventory.UnitProductPrice;
                     product.Price = price.ToMoney();
                     product.IsInStock = true;
 
@@ -365,7 +364,7 @@ namespace _01_EcommerceQuery.Query
                     new InventoryViewModel
                     {
                         ProductId = x.ProductId,
-                        UnitPrice = x.UnitPrice,
+                        UnitPrice = x.UnitProductPrice,
                         IsInStock = x.IsInStock,
                         Size = x.Size,
                         Color = x.Color

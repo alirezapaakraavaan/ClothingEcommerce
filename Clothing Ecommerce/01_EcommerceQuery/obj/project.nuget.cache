@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7oFm8zULr4tWNxErQP9dD49fEHumft41raA4TKVCZanhfYIHyUVD4VF8mhMe2nRusmM09JsTHt7FrSoveDMdWg==",
+  "dgSpecHash": "B/DS4GS1/CmuW0s4IUNdZPaUkilUGJfUOX+czy/PTu3ZcaLpt4KNgR0EYhfxpc8ukMSxMMIeGk2rqhHT/1oyoQ==",
   "success": true,
   "projectFilePath": "D:\\PROGRAMING\\C#\\Core\\Clothing Ecommerce\\Clothing Ecommerce\\01_EcommerceQuery\\01_EcommerceQuery.csproj",
   "expectedPackageFiles": [
@@ -63,6 +63,7 @@
     "C:\\Users\\Alireza\\.nuget\\packages\\mimekit\\2.13.0\\mimekit.2.13.0.nupkg.sha512",
     "C:\\Users\\Alireza\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
     "C:\\Users\\Alireza\\.nuget\\packages\\portable.bouncycastle\\1.8.10\\portable.bouncycastle.1.8.10.nupkg.sha512",
+    "C:\\Users\\Alireza\\.nuget\\packages\\restsharp\\106.11.7\\restsharp.106.11.7.nupkg.sha512",
     "C:\\Users\\Alireza\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\Alireza\\.nuget\\packages\\system.appcontext\\4.1.0\\system.appcontext.4.1.0.nupkg.sha512",
     "C:\\Users\\Alireza\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",

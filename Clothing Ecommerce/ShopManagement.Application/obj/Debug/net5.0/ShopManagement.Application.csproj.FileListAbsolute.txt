@@ -17,3 +17,5 @@ D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Appli
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Application\obj\Debug\net5.0\ShopManagement.Application.dll
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Application\obj\Debug\net5.0\ref\ShopManagement.Application.dll
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Application\obj\Debug\net5.0\ShopManagement.Application.pdb
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Application\bin\Debug\net5.0\InventoryManagement.Application.Contracts.dll
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ShopManagement.Application\bin\Debug\net5.0\InventoryManagement.Application.Contracts.pdb

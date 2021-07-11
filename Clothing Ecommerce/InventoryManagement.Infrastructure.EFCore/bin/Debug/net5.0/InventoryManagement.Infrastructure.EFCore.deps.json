@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "InventoryManagement.Infrastructure.EFCore/1.0.0": {
         "dependencies": {
+          "AccountManagement.Infrastructure.EfCore": "1.0.0",
           "InventoryManagement.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.7",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7",
@@ -814,6 +815,14 @@
           }
         }
       },
+      "RestSharp/106.11.7": {
+        "runtime": {
+          "lib/netstandard2.0/RestSharp.dll": {
+            "assemblyVersion": "106.11.7.0",
+            "fileVersion": "106.11.7.0"
+          }
+        }
+      },
       "runtime.native.System/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -1524,10 +1533,39 @@
           "Microsoft.AspNetCore.Http.Features": "5.0.7",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
           "Microsoft.EntityFrameworkCore": "5.0.7",
-          "MimeKit": "2.13.0"
+          "MimeKit": "2.13.0",
+          "RestSharp": "106.11.7"
         },
         "runtime": {
           "0_Framework.dll": {}
+        }
+      },
+      "AccountManagement.Application.Contracts/1.0.0": {
+        "dependencies": {
+          "0_Framework": "1.0.0",
+          "Microsoft.AspNetCore.Http.Features": "5.0.7"
+        },
+        "runtime": {
+          "AccountManagement.Application.Contracts.dll": {}
+        }
+      },
+      "AccountManagement.Domain/1.0.0": {
+        "dependencies": {
+          "0_Framework": "1.0.0",
+          "AccountManagement.Application.Contracts": "1.0.0"
+        },
+        "runtime": {
+          "AccountManagement.Domain.dll": {}
+        }
+      },
+      "AccountManagement.Infrastructure.EfCore/1.0.0": {
+        "dependencies": {
+          "AccountManagement.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.7",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7"
+        },
+        "runtime": {
+          "AccountManagement.Infrastructure.EfCore.dll": {}
         }
       },
       "InventoryManagement.Application.Contracts/1.0.0": {
@@ -1560,6 +1598,7 @@
       "ShopManagement.Domain/1.0.0": {
         "dependencies": {
           "0_Framework": "1.0.0",
+          "InventoryManagement.Application.Contracts": "1.0.0",
           "ShopManagement.Application.Contracts": "1.0.0"
         },
         "runtime": {
@@ -1568,6 +1607,7 @@
       },
       "ShopManagement.Infrastructure.EFCore/1.0.0": {
         "dependencies": {
+          "AccountManagement.Infrastructure.EfCore": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.7",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7",
           "ShopManagement.Domain": "1.0.0"
@@ -2017,6 +2057,13 @@
       "sha512": "sha512-XLhjNAwuVB9ynwn11l5K44eyozh8q6gFseTrlnLNttejimglX7+F9+vxh60LPjvA/DAt6fUdS43N3ah8K6eaWg==",
       "path": "portable.bouncycastle/1.8.10",
       "hashPath": "portable.bouncycastle.1.8.10.nupkg.sha512"
+    },
+    "RestSharp/106.11.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NzndH096CTulvq+ihr7u1mBJ29oukdi9A8bypQJk+kaHxbRzTTrtgsEEQAb04ptTUZmQa7cgo7uF5z7NuEPX1Q==",
+      "path": "restsharp/106.11.7",
+      "hashPath": "restsharp.106.11.7.nupkg.sha512"
     },
     "runtime.native.System/4.3.0": {
       "type": "package",
@@ -2530,6 +2577,21 @@
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
     "0_Framework/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AccountManagement.Application.Contracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AccountManagement.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AccountManagement.Infrastructure.EfCore/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

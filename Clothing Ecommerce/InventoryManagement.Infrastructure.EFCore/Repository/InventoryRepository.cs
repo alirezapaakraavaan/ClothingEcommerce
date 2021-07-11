@@ -2,6 +2,7 @@
 using System.Linq;
 using _0_Framework.Application;
 using _0_Framework.Infrastructure;
+using AccountManagement.Infrastructure.EfCore;
 using InventoryManagement.Application.Contracts;
 using InventoryManagement.Domain.InventoryAgg;
 using ShopManagement.Infrastructure.EFCore;
@@ -12,11 +13,14 @@ namespace InventoryManagement.Infrastructure.EFCore.Repository
     {
         private readonly InventoryContext _context;
         private readonly ShopContext _shopContext;
+        private readonly AccountContext _accountContext;
 
-        public InventoryRepository(InventoryContext context, ShopContext shopContext) : base(context)
+        public InventoryRepository(InventoryContext context, ShopContext shopContext, AccountContext accountContext) :
+            base(context)
         {
             _context = context;
             _shopContext = shopContext;
+            _accountContext = accountContext;
         }
 
         public EditInventory GetDetails(long id)
@@ -27,13 +31,13 @@ namespace InventoryManagement.Infrastructure.EFCore.Repository
                 Size = x.Size,
                 Color = x.Color,
                 ProductId = x.ProductId,
-                UnitPrice = x.UnitPrice
+                UnitPrice = x.UnitProductPrice
             }).FirstOrDefault(x => x.Id == id);
         }
 
-        public Inventory GetBy(long productId)
+        public Inventory GetBy(long productId, string size)
         {
-            return _context.Inventories.FirstOrDefault(x => x.ProductId == productId);
+            return _context.Inventories.FirstOrDefault(x => x.ProductId == productId && x.Size == size);
         }
 
         public List<InventoryViewModel> Search(InventorySearchModel searchModel)
@@ -45,7 +49,7 @@ namespace InventoryManagement.Infrastructure.EFCore.Repository
                 Size = x.Size,
                 Color = x.Color,
                 ProductId = x.ProductId,
-                UnitPrice = x.UnitPrice,
+                UnitPrice = x.UnitProductPrice,
                 Id = x.Id,
                 CurrentCount = x.CalculateCurrentCount()
             });
@@ -65,8 +69,9 @@ namespace InventoryManagement.Infrastructure.EFCore.Repository
 
         public List<InventoryOperationViewModel> GetOperationLog(long inventoryId)
         {
+            var accounts = _accountContext.Accounts.Select(x => new {x.Id, x.Fullname});
             var inventory = _context.Inventories.FirstOrDefault(x => x.Id == inventoryId);
-            return inventory.Operations.Select(x => new InventoryOperationViewModel
+            var operations = inventory.Operations.Select(x => new InventoryOperationViewModel
             {
                 Id = x.Id,
                 Size = x.Size,
@@ -76,10 +81,16 @@ namespace InventoryManagement.Infrastructure.EFCore.Repository
                 CurrentCount = x.CurrentCount,
                 Operation = x.Operation,
                 OperationDate = x.OperationDate.ToFarsi(),
-                Operator = "مدیر سیستم",
                 OperatorId = x.OperatorId,
                 OrderId = x.OrderId
             }).OrderByDescending(x => x.Id).ToList();
+
+            foreach (var operation in operations)
+            {
+                operation.Operator = accounts.FirstOrDefault(x => x.Id == operation.OperatorId)?.Fullname;
+            }
+
+            return operations;
         }
     }
 }

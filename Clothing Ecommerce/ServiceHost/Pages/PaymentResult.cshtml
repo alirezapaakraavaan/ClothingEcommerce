@@ -1,0 +1,53 @@
+﻿@page
+@model ServiceHost.Pages.PaymentResultModel
+@{
+    ViewData["Title"] = "نتیجه ی پرداخت";
+}
+
+<div class="breadcrumb-area breadcrumb-bg-1 pt-50 pb-70 mb-130">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="breadcrumb-title">نتیجه ی پرداخت</h1>
+                <ul class="breadcrumb-list">
+                    <li class="breadcrumb-list__item">
+                        <a asp-page="/Index">خانه</a>
+                    </li>
+                    <li class="breadcrumb-list__item breadcrumb-list__item--active">نتیجه ی پرداخت</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="shopping-cart-area mb-130">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mb-30">
+                @if (Model.Result.IsSuccessful)
+                {
+                    <div class="alert alert-success">
+                        <p>
+                            @Model.Result.Message
+                        </p>
+                        @if (!string.IsNullOrWhiteSpace(Model.Result.IssueTrackingNo))
+                        {
+                            <p>
+                                شماره پیگیری: <strong>@Model.Result.IssueTrackingNo</strong>
+                            </p>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <div class="alert alert-danger">
+                        <p>
+                            @Model.Result.Message
+                        </p>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

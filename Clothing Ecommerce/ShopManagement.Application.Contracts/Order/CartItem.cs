@@ -9,6 +9,7 @@
         public double TotalPrice { get; set; }
         public string Picture { get; set; }
         public int Count { get; set; }
+        public long InventoryId { get; set; }
         public string Color { get; set; }
         public string Size { get; set; }
         public double TotalItemPrice { get; set; }

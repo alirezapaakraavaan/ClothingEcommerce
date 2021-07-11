@@ -15,6 +15,12 @@ namespace AccountManagement.Application.Contracts.Account
         public string Username { get; set; }
 
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
+        public string City { get; set; }
+
+        [Required(ErrorMessage = ValidationMessages.IsRequired)]
+        public string Address { get; set; }
+
+        [Required(ErrorMessage = ValidationMessages.IsRequired)]
         public string Password { get; set; }
 
         public long RoleId { get; set; }

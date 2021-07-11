@@ -47,6 +47,8 @@ namespace AccountManagement.Infrastructure.EfCore.Repository
                 Fullname = x.Fullname,
                 Role = x.Role.Name,
                 Mobile = x.Mobile,
+                City = x.City,
+                Address = x.Address,
                 RoleId = x.RoleId,
                 Username = x.Username,
                 CreationDate = x.CreationDate.ToFarsi()
@@ -65,6 +67,15 @@ namespace AccountManagement.Infrastructure.EfCore.Repository
                 query = query.Where(x => x.RoleId == searchModel.RoleId);
 
             return query.OrderByDescending(x => x.Id).ToList();
+        }
+
+        public List<AccountViewModel> GetAccounts()
+        {
+            return _context.Accounts.Select(x => new AccountViewModel
+            {
+                Id = x.Id,
+                Fullname = x.Fullname
+            }).ToList();
         }
     }
 }

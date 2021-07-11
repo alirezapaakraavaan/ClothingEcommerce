@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using _0_Framework.Infrastructure;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -10,7 +9,6 @@ using ShopManagement.Configuration.Permissions;
 
 namespace ServiceHost.Areas.Administration.Pages.Shop.ProductCategories
 {
-    //[Authorize(Roles = "1, 3")]
     public class IndexModel : PageModel
     {
         public ProductCategorySearchModel SearchModel;
