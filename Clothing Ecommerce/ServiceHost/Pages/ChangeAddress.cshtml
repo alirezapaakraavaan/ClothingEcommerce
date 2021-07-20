@@ -1,0 +1,29 @@
+﻿@model AccountManagement.Application.Contracts.Account.ChangeAddress
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h4 class="modal-title">تغییر آدرس</h4>
+</div>
+
+<form asp-page="./Profile" asp-page-handler="ChangeAddress"
+      method="post"
+      data-ajax="true"
+      data-callback=""
+      data-action="Refresh">
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Address" class="control-label">آدرس جدید</label>
+                    <input type="text" class="form-control" asp-for="Address">
+                    <span asp-validation-for="Address" class="error"></span>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" asp-for="Id" value="@Model.Id" />
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
+        <button type="submit" class="btn btn-info waves-effect waves-light">اعمال تغییر</button>
+    </div>
+</form>

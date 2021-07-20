@@ -64,12 +64,6 @@
                                     <li>
                                         <a asp-page="ArticleCategories">مقالات</a>
                                     </li>
-                                    @if (AuthHelper.IsAuthenticated())
-                                    {
-                                        <li>
-                                            <a asp-page="Account" asp-page-handler="Logout">خروج</a>
-                                        </li>
-                                    }
                                 </ul>
                             </nav>
                         </div>
@@ -245,9 +239,7 @@
 
             <div class="cart-product-wrapper" >
                 <div class="cart-product-container ps-scroll" id="cart_items_wrapper">
-
                     
-
                 </div>
                 
                 <div class="cart-buttons">

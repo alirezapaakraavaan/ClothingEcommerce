@@ -81,7 +81,8 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 UnitProductPrice = x.UnitProductPrice,
                 Size = x.Size,
                 Color = x.Color,
-                InventoryId = x.InventoryId
+                InventoryId = x.InventoryId,
+                OrderDate = x.CreationDate.ToFarsi()
             }).ToList();
 
             foreach (var item in items)

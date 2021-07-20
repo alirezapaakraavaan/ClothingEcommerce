@@ -42,6 +42,15 @@
 
     @await Component.InvokeAsync("Footer")
 
+    <div id="MainModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content" id="ModalContent">
+
+            </div>
+        </div>
+    </div>
+
     <a href="#" class="scroll-top"></a>
     <script src="~/Theme/assets/js/vendor/jquery.min.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -75,6 +84,9 @@
             updateCart();
         });
     </script>
+
+    <script src="~/Theme/assets/js/site.js"></script>
+
 </body>
 
 </html>

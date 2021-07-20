@@ -11,5 +11,6 @@
         public string Color { get; set; }
         public int DiscountRate { get; set; }
         public long OrderId { get; set; }
+        public string OrderDate { get; set; }
     }
 }

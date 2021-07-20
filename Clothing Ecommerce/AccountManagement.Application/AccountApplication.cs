@@ -84,6 +84,20 @@ namespace AccountManagement.Application
             return operation.Succeeded();
         }
 
+        public OperationResult ChangeAddress(ChangeAddress command)
+        {
+            var operation = new OperationResult();
+            var account = _accountRepository.Get(command.Id);
+
+            if (account == null)
+                return operation.Failed(ApplicationMessages.RecordNotFound);
+
+            var address = command.Address;
+            account.ChangeAddress(address);
+            _accountRepository.SaveChanges();
+            return operation.Succeeded();
+        }
+
         public OperationResult Login(Login command)
         {
             var operation = new OperationResult();

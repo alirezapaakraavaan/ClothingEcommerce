@@ -1,0 +1,109 @@
+﻿@page
+@using _0_Framework.Application
+@model ServiceHost.Pages.ProfileModel
+@inject IAuthHelper AuthHelper;
+@{
+    var currentAccount = AuthHelper.CurrentAccountInfo();
+}
+@{
+    ViewData["Title"] = "پنل کاربری";
+}
+
+<div class="breadcrumb-area breadcrumb-bg-1 pt-50 pb-70 mb-130">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="breadcrumb-title">پنل کاربری</h1>
+                <ul class="breadcrumb-list">
+                    <li class="breadcrumb-list__item"><a asp-page="./Index">خانه</a></li>
+                    <li class="breadcrumb-list__item breadcrumb-list__item--active">پنل من</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="my-account-area mb-130 mb-md-70 mb-sm-70 mb-xs-70 mb-xxs-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="myaccount-tab-menu nav" role="tablist">
+                            <a href="#orders" data-toggle="tab"> سفارشات</a>
+                            <a href="#address-edit" data-toggle="tab"> آدرس</a>
+                            <a href="#account-info" data-toggle="tab"> اطلاعات کاربری</a>
+                            <a asp-page="Account" asp-page-handler="Logout"> خروج</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="tab-content" id="myaccountContent">
+                            <div class="tab-pane fade" id="orders" role="tabpanel">
+                                <div class="myaccount-content">
+                                    <h3>سفارشات</h3>
+                                    <div class="myaccount-table table-responsive text-center">
+                                        <table class="table table-bordered">
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <th>تاریخ</th>
+                                                    <th>مجموع</th>
+                                                    <th>آیتم ها</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var item in Model.Orders)
+                                                {
+                                                    <tr>
+                                                        <td>@item.CreationDate</td>
+                                                        <td>@item.TotalAmount</td>
+                                                        <td>
+                                                            <a class="btn btn-primary pull-right m-rl-5"
+                                                               href="#showmodal=@Url.Page("./Profile", "Items", new {id = item.Id})">
+                                                                <i class="fa fa-id-card"></i> آیتم ها
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="address-edit" role="tabpanel">
+                                <div class="myaccount-content">
+                                    <h3>آدرس شما</h3>
+                                    <address>
+                                        <p><strong>@currentAccount.Fullname</strong></p>
+                                        @foreach (var item in Model.Accounts)
+                                        {
+                                            <p>
+                                                @item.Address
+                                            </p>
+                                            <p>@item.Mobile</p>
+                                        }
+                                    </address>
+                                    @foreach (var item in Model.Accounts)
+                                    {
+                                        <a class="check-btn sqr-btn"
+                                           href="#showmodal=@Url.Page("./Profile", "ChangeAddress", new {id = item.Id})">
+                                            <i class="fa fa-edit"></i>ویرایش آدرس
+                                        </a>
+                                    }
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="account-info" role="tabpanel">
+                                <div class="myaccount-content">
+                                    <h3>جزئیات حساب</h3>
+                                    <div class="account-details-form">
+                                        <p>برای تغییر رمز خود با ما تماس بگیرید</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

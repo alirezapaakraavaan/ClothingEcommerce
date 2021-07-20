@@ -302,7 +302,6 @@ D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\bin\Debu
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\bin\Debug\net5.0\ShopManagement.Infrastructure.InventoryAcl.pdb
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\Orders\Index.cshtml.g.cs
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\Orders\Items.cshtml.g.cs
-D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Areas\Administration\Pages\Shop\Orders\Info.cshtml.g.cs
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
@@ -311,3 +310,6 @@ D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\bin\Debu
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\bin\Debug\net5.0\InventoryManagement.Presentation.Api.pdb
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\bin\Debug\net5.0\ShopManagement.Presentation.Api.pdb
 D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Pages\Profile.cshtml.g.cs
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Pages\ChangeAddress.cshtml.g.cs
+D:\PROGRAMING\C#\Core\Clothing Ecommerce\Clothing Ecommerce\ServiceHost\obj\Debug\net5.0\Razor\Pages\Items.cshtml.g.cs

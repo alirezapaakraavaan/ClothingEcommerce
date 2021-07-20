@@ -47,5 +47,10 @@ namespace AccountManagement.Domain.AccountAgg
         {
             Password = password;
         }
+
+        public void ChangeAddress(string address)
+        {
+            Address = address;
+        }
     }
 }
