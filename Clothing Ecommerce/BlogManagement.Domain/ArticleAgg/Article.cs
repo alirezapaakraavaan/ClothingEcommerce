@@ -40,9 +40,9 @@ namespace BlogManagement.Domain.ArticleAgg
             IsRemoved = false;
         }
 
-        public void Edit(string title, string shortDescription, string description, string picture, string pictureAlt,
-            string pictureTitle, DateTime publishDate, string slug, string metaDescription, string canonicalAddress,
-            string keywords, long categoryId)
+        public void Edit(string title, string shortDescription, string description, string picture,
+            string pictureAlt, string pictureTitle, DateTime publishDate, string slug, string metaDescription,
+            string canonicalAddress, string keywords, long categoryId)
         {
             Title = title;
             ShortDescription = shortDescription;

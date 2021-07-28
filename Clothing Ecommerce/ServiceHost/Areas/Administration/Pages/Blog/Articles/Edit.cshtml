@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{id}"
 @model ServiceHost.Areas.Administration.Pages.Blog.Articles.EditModel
 
 @{
@@ -19,7 +19,7 @@
                             <div class="form-group">
                                 <label asp-for="Command.Title" class="control-label">عنوان</label>
                                 <input type="text" class="form-control" asp-for="Command.Title"
-                                       onchange="makeSlug('Command_Title', 'Command_Slug')">
+                                       onchange="makeSlug('command_Title', 'command_Slug')">
                                 <span asp-validation-for="Command.Title" class="error"></span>
                             </div>
                         </div>
@@ -67,7 +67,7 @@
                             <div class="form-group no-margin">
                                 <label asp-for="Command.ShortDescription" class="control-label">توضیحات کوتاه</label>
                                 <textarea class="form-control autogrow" asp-for="Command.ShortDescription"
-                                          onchange="fillField('Command_ShortDescription', 'Command_MetaDescription')"
+                                          onchange="fillField('command_ShortDescription', 'command_MetaDescription')"
                                           style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 104px;"></textarea>
                                 <span asp-validation-for="Command.ShortDescription" class="error"></span>
                             </div>
@@ -114,9 +114,9 @@
                                 <span asp-validation-for="Command.PublishDate" class="error"></span>
                             </div>
                         </div>
-                        <input type="hidden" asp-for="Command.Id" value="Command.Id" />
                     </div>
-                    <button type="submit" class="btn-success">ایجاد</button>
+                    <input type="hidden" asp-for="Command.Id" value="@Model.Command.Id" />
+                    <button type="submit" class="btn-success">ویرایش</button>
                     <a asp-page="./Index" class="btn-secondary">بازگشت</a>
                 </form>
             </div>

@@ -18,7 +18,6 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Slides
             _slideApplication = slideApplication;
         }
 
-
         public void OnGet()
         {
             Slides = _slideApplication.GetList();

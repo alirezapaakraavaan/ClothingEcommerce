@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using BlogManagement.Application.Contracts.Article;
 using BlogManagement.Application.Contracts.ArticleCategory;
 using Microsoft.AspNetCore.Mvc;
@@ -8,10 +9,11 @@ namespace ServiceHost.Areas.Administration.Pages.Blog.Articles
 {
     public class EditModel : PageModel
     {
+        public EditArticle Command;
+        public SelectList ArticleCategories;
         private readonly IArticleCategoryApplication _articleCategoryApplication;
         private readonly IArticleApplication _articleApplication;
-        public SelectList ArticleCategories;
-        public EditArticle Command;
+
 
         public EditModel(IArticleCategoryApplication articleCategoryApplication,
             IArticleApplication articleApplication)
@@ -23,13 +25,14 @@ namespace ServiceHost.Areas.Administration.Pages.Blog.Articles
         public void OnGet(long id)
         {
             Command = _articleApplication.GetDetails(id);
-            ArticleCategories = new SelectList(_articleCategoryApplication.GetArticleCategories(), "Id", "Name");
+            ArticleCategories = new SelectList(_articleCategoryApplication.GetArticleCategories(),
+                "Id", "Name");
         }
 
         public IActionResult OnPost(EditArticle command)
         {
             var result = _articleApplication.Edit(command);
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Index", result);
         }
     }
 }

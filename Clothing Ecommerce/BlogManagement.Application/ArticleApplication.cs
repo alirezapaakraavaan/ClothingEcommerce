@@ -42,6 +42,7 @@ namespace BlogManagement.Application
         {
             var operation = new OperationResult();
             var article = _articleRepository.GetWithCategory(command.Id);
+
             if (article == null)
                 return operation.Failed(ApplicationMessages.RecordNotFound);
 
@@ -50,8 +51,8 @@ namespace BlogManagement.Application
             var pictureName = _fileUploader.Upload(command.Picture, path);
             var publishDate = command.PublishDate.ToGeorgianDateTime();
             article.Edit(command.Title, command.ShortDescription, command.Description, pictureName,
-                command.PictureAlt, command.PictureTitle, publishDate, slug,
-                command.MetaDescription, command.CanonicalAddress, command.Keywords, command.CategoryId);
+                command.PictureAlt, command.PictureTitle, publishDate, slug, command.MetaDescription,
+                command.CanonicalAddress, command.Keywords, command.CategoryId);
             _articleRepository.SaveChanges();
             return operation.Succeeded();
         }

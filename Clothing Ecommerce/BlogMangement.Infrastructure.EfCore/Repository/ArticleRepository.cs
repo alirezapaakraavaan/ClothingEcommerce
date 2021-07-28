@@ -41,7 +41,9 @@ namespace BlogManagement.Infrastructure.EfCore.Repository
 
         public Article GetWithCategory(long id)
         {
-            return _context.Articles.Include(x => x.ArticleCategory).FirstOrDefault(x => x.Id == id);
+            return _context.Articles
+                .Include(x => x.ArticleCategory)
+                .FirstOrDefault(x => x.Id == id);
         }
 
         public List<ArticleViewModel> Search(ArticleSearchModel searchModel)
