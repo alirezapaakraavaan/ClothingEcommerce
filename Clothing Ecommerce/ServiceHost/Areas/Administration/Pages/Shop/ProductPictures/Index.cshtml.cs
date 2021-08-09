@@ -66,5 +66,15 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.ProductPictures
             Message = product.Message;
             return RedirectToPage("./Index");
         }
+
+        public IActionResult OnGetRestore(long id)
+        {
+            var result = _productPictureApplication.Restore(id);
+            if (result.IsSucceeded)
+                return RedirectToPage("./Index");
+            Message = result.Message;
+
+            return RedirectToPage("./Index");
+        }
     }
 }

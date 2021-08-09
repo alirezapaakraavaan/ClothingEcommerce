@@ -142,7 +142,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Work Sans", sans-serif;
+    font-family: IranSans;
     font-weight: 400;
     margin-top: 0;
     color: #333333;
@@ -287,7 +287,7 @@ textarea:-ms-input-placeholder {
 
 /* scroll to top*/
 a.scroll-top {
-    font-family: "Ionicons";
+    font-family: IranSans;
     line-height: 50px;
     position: fixed;
     z-index: 999;
@@ -636,7 +636,7 @@ a.scroll-top {
             }
 
                 .site-mobile-nav .dl-menu li > a:not(:only-child)::after {
-                    font-family: "FontAwesome";
+                    font-family: IranSans;
                     font-size: 18px;
                     right: 25px;
                     content: "\f105";
@@ -665,7 +665,7 @@ a.scroll-top {
                 }
 
                     .site-mobile-nav .dl-menu li .dl-submenu li.dl-back a::after {
-                        font-family: "FontAwesome";
+                        font-family: IranSans;
                         line-height: 50px;
                         position: absolute;
                         z-index: -1;
@@ -1571,7 +1571,7 @@ nav.site-nav > ul > li.menu-item-has-children > a {
 }
 
     nav.site-nav > ul > li.menu-item-has-children > a:before {
-        font-family: fontAwesome;
+        font-family: IranSans;
         position: absolute;
         top: 50%;
         right: -15px;
@@ -1630,7 +1630,7 @@ nav.site-nav > ul > li ul.single-column-menu {
     }
 
         nav.site-nav > ul > li ul.single-column-menu.single-column-has-children > li:after {
-            font-family: fontAwesome;
+            font-family: IranSans;
             position: absolute;
             right: 0;
             content: "\f105";
@@ -2299,7 +2299,7 @@ nav.site-nav > ul > li ul.mega-menu-column-5 > li .mega-sub-menu li:last-child a
         }
 
         .change-dropdown > a:before {
-            font-family: fontAwesome;
+            font-family: IranSans;
             position: absolute;
             top: 0;
             right: -15px;
@@ -3485,7 +3485,7 @@ nav.site-nav > ul > li ul.mega-menu-column-5 > li .mega-sub-menu li:last-child a
         }
 
             .vertical-menu-container-dark nav > ul > li.has-children > ul li.has-children:after {
-                font-family: fontAwesome;
+                font-family: IranSans;
                 position: absolute;
                 right: 0;
                 content: "\f105";
@@ -3852,7 +3852,7 @@ nav.site-nav > ul > li ul.mega-menu-column-5 > li .mega-sub-menu li:last-child a
 }
 
 .section-title--one--spectral h1 {
-    font-family: "Spectral", serif;
+    font-family: IranSans;
     font-weight: 500;
 }
 
@@ -3868,7 +3868,7 @@ nav.site-nav > ul > li ul.mega-menu-column-5 > li .mega-sub-menu li:last-child a
 }
 
 .section-title .title-blue {
-    font-family: "Spectral", serif;
+    font-family: IranSans;
     font-size: 50px;
     font-weight: 400;
     font-style: normal;
@@ -3947,7 +3947,7 @@ nav.site-nav > ul > li ul.mega-menu-column-5 > li .mega-sub-menu li:last-child a
 }
 
 .instagram-title-container .subtitle {
-    font-family: "Spectral", serif;
+    font-family: IranSans;
     font-size: 50px;
     font-weight: 300;
     font-style: italic;
@@ -6433,14 +6433,14 @@ nav.site-nav > ul > li ul.mega-menu-column-5 > li .mega-sub-menu li:last-child a
 }
 
 .lezada-slick-slider--fullscreen .lezada-single-slider__content--spectral-style .subtitle {
-    font-family: "Spectral", serif;
+    font-family: IranSans;
     font-weight: 300;
     font-style: italic;
     text-transform: capitalize;
 }
 
 .lezada-slick-slider--fullscreen .lezada-single-slider__content--spectral-style .main-title {
-    font-family: "Spectral", serif;
+    font-family: IranSans;
 }
 
 .lezada-slick-slider--fullscreen .lezada-single-slider__content--spectral-style .lezada-button {
@@ -7006,7 +7006,7 @@ nav.site-nav > ul > li ul.mega-menu-column-5 > li .mega-sub-menu li:last-child a
 }
 
 .single-product__content .title > a.active:before {
-    font-family: Ionicons;
+    font-family: IranSans;
     font-size: 15px;
     font-weight: 500;
     display: inline-block;
@@ -7134,7 +7134,7 @@ nav.site-nav > ul > li ul.mega-menu-column-5 > li .mega-sub-menu li:last-child a
         }
 
             .single-product--wearablehome .single-product__floating-cart span.title a.active:before {
-                font-family: Ionicons;
+                font-family: IranSans;
                 font-size: 15px;
                 font-weight: 500;
                 display: inline-block;
@@ -7366,7 +7366,7 @@ nav.site-nav > ul > li ul.mega-menu-column-5 > li .mega-sub-menu li:last-child a
 }
 
     .single-widget-product__content__bottom a.cart-btn.active:before {
-        font-family: Ionicons;
+        font-family: IranSans;
         font-size: 15px;
         font-weight: 400;
         display: inline-block;
@@ -7468,7 +7468,7 @@ nav.site-nav > ul > li ul.mega-menu-column-5 > li .mega-sub-menu li:last-child a
     }
 
     .lezada-button-2:before {
-        font-family: "Ionicons";
+        font-family: IranSans;
         font-size: 0;
         font-weight: 400;
         line-height: 0;
@@ -8236,7 +8236,7 @@ nav.site-nav > ul > li ul.mega-menu-column-5 > li .mega-sub-menu li:last-child a
     }
 
     .single-slider-post__content a.blog-readmore-btn:before {
-        font-family: "Ionicons";
+        font-family: IranSans;
         font-size: 0;
         font-weight: 400;
         line-height: 0;
@@ -8871,7 +8871,7 @@ nav.site-nav > ul > li ul.mega-menu-column-5 > li .mega-sub-menu li:last-child a
 }
 
 .single-shoppable .shoppable-content p {
-    font-family: Work Sans;
+    font-family: IranSans;
     font-size: 16px;
     font-weight: 600;
     font-style: normal;
@@ -8896,7 +8896,7 @@ nav.site-nav > ul > li ul.mega-menu-column-5 > li .mega-sub-menu li:last-child a
 }
 
 .single-shoppable .shoppable-content h2 {
-    font-family: Work Sans;
+    font-family: IranSans;
     font-size: 72px;
     font-weight: 600;
     font-style: normal;
@@ -9220,7 +9220,7 @@ nav.site-nav > ul > li ul.mega-menu-column-5 > li .mega-sub-menu li:last-child a
 }
 
 .video-icon-content__title {
-    font-family: "Spectral", serif;
+    font-family: IranSans;
     font-size: 50px;
     font-weight: 400;
     line-height: 1.3;
@@ -9259,7 +9259,7 @@ nav.site-nav > ul > li ul.mega-menu-column-5 > li .mega-sub-menu li:last-child a
 }
 
     .video-icon-content__icon-content-wrapper .single-icon-content__content .title {
-        font-family: "Spectral", serif;
+        font-family: IranSans;
         font-size: 25px;
         font-weight: 400;
         font-style: italic;
@@ -9321,7 +9321,7 @@ nav.site-nav > ul > li ul.mega-menu-column-5 > li .mega-sub-menu li:last-child a
 }
 
 .about-bg-content__title {
-    font-family: "Spectral", serif;
+    font-family: IranSans;
     font-size: 40px;
     line-height: 1.5;
     margin-bottom: 35px;
@@ -9341,7 +9341,7 @@ nav.site-nav > ul > li ul.mega-menu-column-5 > li .mega-sub-menu li:last-child a
 }
 
 .about-bg-content__text {
-    font-family: "Spectral", serif;
+    font-family: IranSans;
     font-size: 18px;
     line-height: 2;
     color: #7e7e7e;
@@ -9618,7 +9618,7 @@ nav.site-nav > ul > li ul.mega-menu-column-5 > li .mega-sub-menu li:last-child a
 }
 
 .brand-carousel-content__text {
-    font-family: "Spectral", serif;
+    font-family: IranSans;
     font-size: 32px;
     font-weight: 200;
     font-style: italic;
@@ -10157,7 +10157,7 @@ nav.site-nav > ul > li ul.mega-menu-column-5 > li .mega-sub-menu li:last-child a
 }
 
 .banner-cta-content__subtitle {
-    font-family: "Spectral", serif;
+    font-family: IranSans;
     font-size: 40px;
     line-height: 1.4;
     margin-bottom: 40px;
@@ -10228,7 +10228,7 @@ nav.site-nav > ul > li ul.mega-menu-column-5 > li .mega-sub-menu li:last-child a
 }
 
 .single-image-text-banner__content .text {
-    font-family: "Spectral", serif;
+    font-family: IranSans;
     font-size: 30px;
     font-weight: 400;
     line-height: 1.2;
@@ -10254,7 +10254,7 @@ nav.site-nav > ul > li ul.mega-menu-column-5 > li .mega-sub-menu li:last-child a
 }
 
     .single-image-text-banner__content a:before {
-        font-family: "Ionicons";
+        font-family: IranSans;
         font-size: 0;
         font-weight: 400;
         line-height: 0;
@@ -12420,7 +12420,7 @@ nav.site-nav > ul > li ul.mega-menu-column-5 > li .mega-sub-menu li:last-child a
             }
 
             .checkout-form .check-box input[type="checkbox"] + label::after {
-                font-family: Fontawesome;
+                font-family: IranSans;
                 font-size: 12px;
                 line-height: 20px;
                 position: absolute;
@@ -13051,7 +13051,7 @@ nav.site-nav > ul > li ul.mega-menu-column-5 > li .mega-sub-menu li:last-child a
 }
 
 .background-cta-content__subtitle {
-    font-family: "Spectral", serif;
+    font-family: IranSans;
     font-size: 20px;
     font-weight: 600;
     font-style: italic;
@@ -13061,7 +13061,7 @@ nav.site-nav > ul > li ul.mega-menu-column-5 > li .mega-sub-menu li:last-child a
 }
 
 .background-cta-content__title {
-    font-family: "Spectral", serif;
+    font-family: IranSans;
     font-size: 50px;
     font-weight: 500;
     line-height: 1.5;

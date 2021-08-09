@@ -23,6 +23,9 @@ namespace AccountManagement.Application.Contracts.Account
         [Required(ErrorMessage = ValidationMessages.IsRequired)]
         public string Password { get; set; }
 
+        [Required(ErrorMessage = ValidationMessages.IsRequired)]
+        public string RePassword { get; set; }
+
         public long RoleId { get; set; }
 
         [Required(ErrorMessage = ValidationMessages.IsRequired)]

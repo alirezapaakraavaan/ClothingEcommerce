@@ -10,19 +10,21 @@ namespace AccountManagement.Domain.AccountAgg
         public string City { get; private set; }
         public string Address { get; private set; }
         public string Password { get; private set; }
+        public string RePassword { get; private set; }
         public long RoleId { get; private set; }
         public string Mobile { get; private set; }
         public string ProfilePhoto { get; private set; }
         public Role Role { get; private set; }
 
-        public Account(string fullname, string username, string city, string address, string password, long roleId,
-            string mobile, string profilePhoto)
+        public Account(string fullname, string username, string city, string address, string password,
+            string rePassword, long roleId, string mobile, string profilePhoto)
         {
             Fullname = fullname;
             Username = username;
             City = city;
             Address = address;
             Password = password;
+            RePassword = rePassword;
             RoleId = roleId;
 
             if (roleId == 0)
